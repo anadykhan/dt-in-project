@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import CausesCard from "../components/causes/CausesCard";
+import ComponentDisplay from "../components/display/ComponentDisplay";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <CausesCard></CausesCard>
+        element: <ComponentDisplay></ComponentDisplay>
     }
 ])
 

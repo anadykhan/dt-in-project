@@ -6,17 +6,19 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import CommonButton from '../button/CommonButton'
 import { Box } from '@mui/system';
+import Badge from '../badge/Badge';
 
 
 const CausesCard = (props) => {
 
-  const {title, content, collected, goal} = props
+  const { title, content, collected, goal, badgeContent, badgeBackgroundColor } = props
 
   return (
-    <Card sx={{ 
+    <Card sx={{
       maxWidth: 345,
-      borderRadius: 5
-       }}>
+      borderRadius: 5,
+      position: 'relative'
+    }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -25,12 +27,12 @@ const CausesCard = (props) => {
           alt="green iguana"
         />
         <CardContent
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 2
-        }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 2
+          }}
         >
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -39,10 +41,10 @@ const CausesCard = (props) => {
             {content}
           </Typography>
           <Box
-          sx={{
-            display: 'flex',
-            gap: 3
-          }}
+            sx={{
+              display: 'flex',
+              gap: 3
+            }}
           >
             <Typography>
               Collected: ${collected}
@@ -54,18 +56,27 @@ const CausesCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions
-      sx={{
-        height: 70,
-        display: 'flex',
-        justifyContent: 'center',
-      }}
+        sx={{
+          height: 70,
+          display: 'flex',
+          justifyContent: 'center',
+        }}
       >
         <CommonButton
-        content = 'Donate'
-        bgColor = 'pink'
-        width = {290}
+          content='Donate'
+          bgColor='pink'
+          width={290}
         ></CommonButton>
       </CardActions>
+      <Badge
+        content={badgeContent}
+        backgroundColor={badgeBackgroundColor}
+        sx={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+        }}
+      ></Badge>
     </Card>
   )
 }
