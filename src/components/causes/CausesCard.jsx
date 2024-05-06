@@ -1,10 +1,9 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
-import CommonButton from '../button/CommonButton'
+import CommonButton from '../general/button/CommonButton'
 import { Box } from '@mui/system';
 import Badge from '../badge/Badge';
 

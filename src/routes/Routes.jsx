@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import ComponentDisplay from "../components/display/ComponentDisplay";
+import AccordionCard from "../components/home/accordion-card/AccordionCard";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <ComponentDisplay></ComponentDisplay>
+        element: <AccordionCard></AccordionCard>
     }
 ])
 
