@@ -1,7 +1,10 @@
 import { Box, Typography } from "@mui/material"
 import { BsPeople } from "react-icons/bs";
 
-const AccordionCard = () => {
+const AccordionCard = (props) => {
+
+    const {count, content} = props
+    
     return (
         <Box
             sx={{
@@ -23,8 +26,8 @@ const AccordionCard = () => {
                 <BsPeople
                     fontSize={60}
                 ></BsPeople>
-                <Typography variant="h3">250</Typography>
-                <Typography>Our Volunteers</Typography>
+                <Typography variant="h3">{count}+</Typography>
+                <Typography>{content}</Typography>
             </Box>
         </Box>
     )
