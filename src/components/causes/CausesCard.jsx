@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import CommonButton from '../general/button/CommonButton'
-import { Box } from '@mui/system';
+import { Box } from '@mui/material';
 import Badge from '../badge/Badge';
 
 

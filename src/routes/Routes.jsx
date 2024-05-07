@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import CauseSection from "../components/home/cause-section/CauseSection";
+import UpcomingEventContent from "../components/home/upcoming-event/UpcomingEventContent";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <CauseSection></CauseSection>
+        element: <UpcomingEventContent></UpcomingEventContent>
     }
 ])
 
