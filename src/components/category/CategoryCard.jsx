@@ -15,8 +15,8 @@ function BackgroundImageWithOverlay(props) {
         >
             <Box
                 sx={{
-                    width: 400,
-                    height: 400,
+                    width: 350,
+                    height: 350,
                     position: 'relative',
                     borderRadius: 5,
                     overflow: 'hidden',
@@ -62,7 +62,7 @@ function BackgroundImageWithOverlay(props) {
                     padding: 3,
                     borderRadius: 40,
                     position: 'absolute',
-                    top: 350,
+                    top: 300,
                     left: 20
                 }}
             >

@@ -4,7 +4,7 @@ import CommonButton from '../../general/button/CommonButton'
 
 const CategoryHeader = (props) => {
 
-    const {title, subtitle, background} = props
+    const { title, subtitle, background } = props
 
     return (
         <Box
@@ -12,7 +12,7 @@ const CategoryHeader = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 2,
-                width: 1100
+                width: 'full'
             }}
         >
             <Box
