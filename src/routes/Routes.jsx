@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import CategorySection from "../components/home/category-section/CategorySection";
+import CauseSection from "../components/home/cause-section/CauseSection";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <CategorySection></CategorySection>
+        element: <CauseSection></CauseSection>
     }
 ])
 

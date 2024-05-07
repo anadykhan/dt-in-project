@@ -10,7 +10,7 @@ import Badge from '../badge/Badge';
 
 const CausesCard = (props) => {
 
-  const { title, content, collected, goal, badgeContent, badgeBackgroundColor } = props
+  const { title, content, collected, goal, badgeContent, badgeBackground } = props
 
   return (
     <Card sx={{
@@ -69,11 +69,11 @@ const CausesCard = (props) => {
       </CardActions>
       <Badge
         content={badgeContent}
-        backgroundColor={badgeBackgroundColor}
+        backgroundColor={badgeBackground}
         sx={{
           position: 'absolute',
           top: 10,
-          right: 10,
+          right: 10,  
         }}
       ></Badge>
     </Card>
