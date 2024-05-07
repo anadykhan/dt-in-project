@@ -1,11 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import UpcomingEventContent from "../components/home/upcoming-event/upcoming-event-content/UpcomingEventContent";
-import UpcomingEventSection from "../components/home/upcoming-event/upcoming-event-section/UpcomingEventSection";
+import AccordionContent from "../components/home/accordion/accordion-content/AccordionContent";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <UpcomingEventSection></UpcomingEventSection>
+        element: <AccordionContent></AccordionContent>
     }
 ])
 

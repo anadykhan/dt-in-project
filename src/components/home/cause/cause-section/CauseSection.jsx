@@ -1,8 +1,8 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import CauseHeader from '../cause-header/CauseHeader'
-import CausesCard from '../../causes/CausesCard'
-import CommonButton from '../../general/button/CommonButton'
+import CausesCard from '../../../causes/CausesCard'
+import CommonButton from '../../../general/button/CommonButton'
 
 const CauseSection = () => {
   return (

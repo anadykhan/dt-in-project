@@ -1,8 +1,8 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import CategoryHeader from '../category-header/CategoryHeader'
-import categorySectionData from '../../../data/CategorySectionData'
-import CategoryCard from '../../category/CategoryCard'
+import CategoryHeader from '../../category-header/CategoryHeader'
+import categorySectionData from '../../../../data/CategorySectionData'
+import CategoryCard from '../../../category/CategoryCard'
 
 const CategorySection = () => {
     return (
