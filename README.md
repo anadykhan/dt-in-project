@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 
 To-do:
 1. Upcoming event component making
+2. Accordion component making   

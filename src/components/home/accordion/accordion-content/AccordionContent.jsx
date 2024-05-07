@@ -13,7 +13,8 @@ const AccordionContent = () => {
                 width: 500,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 2
+                gap: 2,
+                color: 'white'
             }}
         >
             <Typography>
