@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import { MdControlPoint } from "react-icons/md";
 import { FaHandshake } from "react-icons/fa6";
-import CommonButton from '../../general/button/CommonButton';
+import CommonButton from '../../../general/button/CommonButton';
 
 
 const UpcomingEventContent = () => {

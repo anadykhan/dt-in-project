@@ -16,9 +16,10 @@ const EventCard = (props) => {
             display: 'flex',
             flexDirection: 'row-reverse',
             justifyContent: 'start',
-            width: 530,
+            width: 600,
             height: 170,
             gap: 2,
+            borderRadius: 4
         }}>
             <Box sx={{
                 display: 'flex',
@@ -28,7 +29,7 @@ const EventCard = (props) => {
                     display: 'flex',
                     flexDirection: 'column',
                     flex: '1 0 auto',
-                    width: '85%',
+                    width: '90%',
                     gap: 1,
                 }}>
                     <Box
@@ -70,7 +71,7 @@ const EventCard = (props) => {
             </Box>
             <Box
                 sx={{
-                    width: 150,
+                    width: 180,
                     position: 'relative',
                 }}
             >
