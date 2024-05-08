@@ -18,14 +18,14 @@ const CategorySection = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    gap: 5,
+                    gap: 8,
                     width: 1150
                 }}
             >
                 <CategoryHeader
                     title='Inspire and Help Needy!'
                     subtitle='GET INVOLVED TODAY'
-                    background='red'
+                    background='#ef5350'
                 ></CategoryHeader>
 
                 {/* <Box
@@ -49,19 +49,19 @@ const CategorySection = () => {
                     }}
                 >
                     <CategoryCard
-                    title='Education for all'
-                    image='src/assets/istockphoto-1430371482-612x612.jpg'
-                    content='Discover innovative approaches to sustainable agriculture.'
+                        title='Education for all'
+                        image='src/assets/istockphoto-1430371482-612x612.jpg'
+                        content='Discover innovative approaches to sustainable agriculture.'
                     ></CategoryCard>
                     <CategoryCard
-                    title='Education for all'
-                    image='src/assets/istockphoto-1430371482-612x612.jpg'
-                    content='Discover innovative approaches to sustainable agriculture.'
+                        title='Education for all'
+                        image='src/assets/istockphoto-1430371482-612x612.jpg'
+                        content='Discover innovative approaches to sustainable agriculture.'
                     ></CategoryCard>
                     <CategoryCard
-                    title='Education for all'
-                    image='src/assets/istockphoto-1430371482-612x612.jpg'
-                    content='Discover innovative approaches to sustainable agriculture.'
+                        title='Education for all'
+                        image='src/assets/istockphoto-1430371482-612x612.jpg'
+                        content='Discover innovative approaches to sustainable agriculture.'
                     ></CategoryCard>
                 </Box>
             </Box>

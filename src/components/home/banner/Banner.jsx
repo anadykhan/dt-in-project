@@ -83,7 +83,7 @@ const Banner = () => {
                 >
                     <CommonButton
                         content='LEARN MORE'
-                        background='red'
+                        background='#ef5350'
                         width={200}
                     />
                 </Box>
