@@ -9,7 +9,7 @@ const AccordionSection = () => {
             sx={{
                 width: 'full',
                 height: 600,
-                backgroundImage: 'url(src/assets/seth-doyle-zf9_yiAekJs-unsplash.jpg)',
+                backgroundImage: 'url(src/assets/abigail-keenan-_h_weGa3eGo-unsplash.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'brightness(40%)',

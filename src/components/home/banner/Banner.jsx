@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import CommonButton from '../../general/button/CommonButton';
+import NavigationBar from '../../layout/navigation/NavigationBar';
 
 const Banner = () => {
     return (
@@ -14,9 +15,12 @@ const Banner = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 display: 'flex',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column'
             }}
         >
+           
             {/* Pseudo-element for dimming effect */}
             <Box
                 sx={{
@@ -27,6 +31,12 @@ const Banner = () => {
                     height: '100%',
                     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust alpha for desired dimness
                     zIndex: 1, // Ensure it's above the background image
+                }}
+            />
+            <NavigationBar
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
                 }}
             />
             <Box

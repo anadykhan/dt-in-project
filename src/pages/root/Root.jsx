@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom"
 const Root = () => {
   return (
     <Box>
-        <Outlet></Outlet>
+      <Outlet></Outlet>
     </Box>
   )
 }
