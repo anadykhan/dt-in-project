@@ -1,10 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import AccordionContent from "../components/home/accordion/accordion-content/AccordionContent";
-import AccordionSection from "../components/home/accordion/accordion-section/AccordionSection";
 import Root from "../pages/root/Root";
 import HomePage from "../pages/home-page/HomePage";
-import SinglePostBanner from "../components/single-post/single-post-banner/SinglePostBanner";
-import SinglePostSection from "../components/single-post/single-post-section/SinglePostSection";
+
+import CausesListPage from "../pages/causes-list/CausesListPage";
+import SinglePostPage from "../pages/single-post-page/single-post-section/SinglePostPage";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +16,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/single-post',
-                element: <SinglePostSection></SinglePostSection>
+                element: <SinglePostPage></SinglePostPage>
+            },
+            {
+                path: '/causes-list',
+                element: <CausesListPage></CausesListPage>
             }
         ]
     }

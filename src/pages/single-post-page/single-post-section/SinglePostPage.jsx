@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import SinglePostBanner from '../single-post-banner/SinglePostBanner'
-import SinglePostContent from '../single-post-content/SinglePostContent'
+import SinglePostBanner from '../../../components/single-post/single-post-banner/SinglePostBanner'
+import SinglePostContent from '../../../components/single-post/single-post-content/SinglePostContent'
 
-const SinglePostSection = () => {
+const SinglePostPage = () => {
     return (
         <Box
             sx={{
@@ -24,4 +24,4 @@ const SinglePostSection = () => {
     )
 }
 
-export default SinglePostSection
+export default SinglePostPage
