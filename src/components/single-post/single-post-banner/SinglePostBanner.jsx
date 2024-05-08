@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import CommonButton from '../../general/button/CommonButton'
 
 const SinglePostBanner = () => {
     return (
@@ -7,7 +8,10 @@ const SinglePostBanner = () => {
             sx={{
                 position: 'relative', // Set position to relative for absolute positioning of text
                 width: 'full',
-                height: 400,
+                height: {
+                    xs: 600,
+                    sm: 400
+                },
             }}
         >
             {/* Background layer with brightness filter */}
@@ -29,11 +33,13 @@ const SinglePostBanner = () => {
                 sx={{
                     position: 'relative', // Set position to relative for absolute positioning of text
                     display: 'flex',
+                    flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                     width: '100%',
                     height: '100%',
                     color: 'white',
+                    gap: 6
                 }}
             >
                 <Typography
@@ -46,6 +52,11 @@ const SinglePostBanner = () => {
                 >
                     Drinking water and food for needy people
                 </Typography>
+                <CommonButton
+                    content='donate now '
+                    background='#ef5350'
+                    width={200}
+                />
             </Box>
         </Box>
     )
