@@ -5,6 +5,7 @@ import HomePage from "../pages/home-page/HomePage";
 import CausesListPage from "../pages/causes-list/CausesListPage";
 import SinglePostPage from "../pages/single-post-page/single-post-section/SinglePostPage";
 import CauseDetailPage from "../pages/cause-detail/CauseDetailPage";
+import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/cause-detail',
                 element: <CauseDetailPage></CauseDetailPage>
+            },
+            {
+                path: '/event-detail',
+                element: <EventDetailPage></EventDetailPage>
             }
         ]
     }
