@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 
 const ListPageBanner = (props) => {
 
-    const {title} = props
+    const {title, sx} = props
 
     return (
         <Box
@@ -13,6 +13,7 @@ const ListPageBanner = (props) => {
                     xs: 400,
                     sm: 400
                 },
+                ...sx
             }}
         >
             {/* Background layer with brightness filter */}
