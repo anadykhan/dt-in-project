@@ -4,6 +4,7 @@ import HomePage from "../pages/home-page/HomePage";
 
 import CausesListPage from "../pages/causes-list/CausesListPage";
 import SinglePostPage from "../pages/single-post-page/single-post-section/SinglePostPage";
+import CauseDetailPage from "../pages/cause-detail/CauseDetailPage";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/causes-list',
                 element: <CausesListPage></CausesListPage>
+            },
+            {
+                path: '/cause-detail',
+                element: <CauseDetailPage></CauseDetailPage>
             }
         ]
     }

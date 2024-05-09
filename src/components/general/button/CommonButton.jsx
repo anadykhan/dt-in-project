@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 
 const CommonButton = (props) => {
 
-  const {content,  background, width} = props
+  const {content,  background, width, sx} = props
 
   return (
       <Button
@@ -13,7 +13,8 @@ const CommonButton = (props) => {
         borderRadius: 30,
         padding: 1.5,
         paddingX: 3,
-        bgcolor: `${background}`
+        bgcolor: `${background}`,
+        ...sx
       }}
       >
         {content}
