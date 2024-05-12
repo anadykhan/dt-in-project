@@ -21,7 +21,7 @@ const EventDetailPage = () => {
           flexDirection: 'row',
         },
         '@media (min-width: 1200px)': {
-          width: 1300,
+          width: 1200,
           margin: 'auto'
         },
       }}

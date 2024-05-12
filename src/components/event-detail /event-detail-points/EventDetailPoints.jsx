@@ -24,6 +24,10 @@ const EventDetailPoints = () => {
             ></FaHandshake>
             <Typography
                 fontSize={18}
+                textAlign='center'
+                sx={{
+                    width: '90%'
+                }}
             >
                 We are inspiring and helping a better lifestyle
             </Typography>
