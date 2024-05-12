@@ -10,9 +10,13 @@ const EventDetailEntry = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: 2,
-                width: '80%',
-                padding: 2,
-                backgroundColor: '#F6F6F6'
+                width: {
+                    xs: '100%',
+                    sm: '80%'
+                },
+                paddingY: 2,
+                backgroundColor: '#F6F6F6',
+                borderRadius: 5
             }}
         >
             <Typography>

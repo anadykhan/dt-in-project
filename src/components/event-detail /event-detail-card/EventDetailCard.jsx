@@ -14,6 +14,10 @@ const EventDetailCard = () => {
         <Box
             sx={{
                 paddingY: 3,
+                width: {
+                    xs: '100%',
+                    sm: '80%'
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
