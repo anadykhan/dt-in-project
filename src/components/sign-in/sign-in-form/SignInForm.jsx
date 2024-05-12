@@ -32,7 +32,6 @@ const SignInForm = () => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                width: '100%'
             }}
         >
             <TextField
@@ -43,7 +42,10 @@ const SignInForm = () => {
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ marginBottom: 2 }}
+                sx={{ 
+                    marginBottom: 2,
+                    width: '100%'
+                 }}
             />
             <TextField
                 label="Email"
