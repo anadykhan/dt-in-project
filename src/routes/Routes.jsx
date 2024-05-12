@@ -6,6 +6,7 @@ import CausesListPage from "../pages/causes-list/CausesListPage";
 import SinglePostPage from "../pages/single-post-page/single-post-section/SinglePostPage";
 import CauseDetailPage from "../pages/cause-detail/CauseDetailPage";
 import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
+import SignInContent from "../components/sign-in/sign-in-content/SignInContent";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
             {
                 path: '/event-detail',
                 element: <EventDetailPage></EventDetailPage>
-            }
+            },
+            {
+                path: '/sign-in',
+                element: <SignInContent></SignInContent>
+            },
         ]
     }
 ])
