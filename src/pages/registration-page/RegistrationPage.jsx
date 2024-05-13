@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import SignInContent from '../../components/sign-in/sign-in-content/SignInContent'
-import SignInForm from '../../components/sign-in/sign-in-form/SignInForm'
+import RegistrationContent from '../../components/registration/registration-content/RegistrationContent'
+import RegistrationForm from '../../components/registration/registration-form/RegistrationForm'
 
-const SignInPage = () => {
+const RegistrationPage = () => {
   return (
     <Box
       sx={{
@@ -16,9 +16,9 @@ const SignInPage = () => {
           flexDirection: 'row'
         },
         '@media (min-width: 1200px)': {
-          width: 1100,
-          margin: 'auto'
-        },
+            width: 1100,
+            margin: 'auto'
+          },
       }}
     >
       <Box
@@ -28,17 +28,17 @@ const SignInPage = () => {
           },
         }}
       >
-        <SignInContent></SignInContent>
+        <RegistrationContent></RegistrationContent>
       </Box>
       <Box
       sx={{
         width: '100%'
       }}
       >
-        <SignInForm></SignInForm>
+        <RegistrationForm></RegistrationForm>
       </Box>
     </Box>
   )
 }
 
-export default SignInPage
+export default RegistrationPage

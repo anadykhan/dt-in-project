@@ -8,6 +8,7 @@ import CauseDetailPage from "../pages/cause-detail/CauseDetailPage";
 import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
 import SignInContent from "../components/sign-in/sign-in-content/SignInContent";
 import SignInPage from "../pages/sign-in-page/SignInPage";
+import RegistrationPage from "../pages/registration-page/RegistrationPage";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path: '/sign-in',
                 element: <SignInPage></SignInPage>
             },
+            {
+                path: '/registration',
+                element: <RegistrationPage></RegistrationPage>
+            }
         ]
     }
 ])

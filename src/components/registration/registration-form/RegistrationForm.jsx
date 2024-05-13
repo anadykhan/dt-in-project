@@ -3,7 +3,7 @@ import { Box, Button, TextField } from '@mui/material';
 import CommonButton from '../../general/button/CommonButton';
 //import '../../../assets/css/common.css'
 
-const SignInForm = () => {
+const RegistrationForm = () => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -87,4 +87,4 @@ const SignInForm = () => {
     );
 };
 
-export default SignInForm;
+export default RegistrationForm;
