@@ -10,8 +10,6 @@ mongoose.connection.on('error', (err) => {
     console.error(err)
 });
 
-// console.log(process.env.MONGO_URL)
-
 async function mongoConnect() {
     if (!MONGO_URL) {
         console.error('MongoDB URL is not defined.');
