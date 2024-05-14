@@ -27,7 +27,6 @@ async function httpCreateDonation (req, res) {
     } catch (err) {
         return res.status(500).json(err)
     }
-
 }
 
 async function httpUpdateDonation (req, res) {
