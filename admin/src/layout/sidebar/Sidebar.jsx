@@ -11,6 +11,7 @@ const Sidebar = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        justifyItems: 'center',
         background: '#001528',
         width: '15%',
         height: '100vh',
@@ -23,11 +24,13 @@ const Sidebar = () => {
           return (
             <NavLink
             key={index}
+            sx={{
+            }}
             >
               <Button
               sx={{
                 color: 'white',
-                fontSize: 18
+                fontSize: 18,
               }}
               >
                 {data}
