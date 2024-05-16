@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-const CausesFormAdmin = ({ data, onSave }) => {
+const EventsFormPage = ({ data, onSave }) => {
     const [formData, setFormData] = useState(data);
 
     const handleChange = (e) => {
@@ -78,41 +78,38 @@ const CausesFormAdmin = ({ data, onSave }) => {
                     margin="normal"
                 />
                 <TextField
-                    label="Collected"
+                    label="Mission"
                     variant="outlined"
-                    name="collected"
+                    name="mission"
                     //value={formData.collected}
                     onChange={handleChange}
-                    type="number"
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Goal"
+                    label="Detail"
                     variant="outlined"
-                    name="goal"
+                    name="detail"
                     //value={formData.goal}
                     onChange={handleChange}
-                    type="number"
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Card Detail"
+                    label="Date and time"
                     variant="outlined"
-                    name="cardDetail"
+                    name="dateTime"
                     //value={formData.cardDetail}
                     onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Priority"
+                    label="Location"
                     variant="outlined"
-                    name="priority"
+                    name="location"
                     //value={formData.priority}
                     onChange={handleChange}
-                    type="number"
                     fullWidth
                     margin="normal"
                 />
@@ -122,4 +119,4 @@ const CausesFormAdmin = ({ data, onSave }) => {
     );
 };
 
-export default CausesFormAdmin;
+export default EventsFormPage;
