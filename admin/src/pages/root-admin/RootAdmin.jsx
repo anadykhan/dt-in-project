@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-import SiderAdmin from '../layouts/sider-admin/SiderAdmin'
+import SiderAdmin from '../../layouts/sider-admin/SiderAdmin'
 import Box from '@mui/material/Box';
 
 
