@@ -1,7 +1,5 @@
 const express = require('express')
 
-const authenticateToken = require('../../authentication/authenticate')
-
 const donationsRouter = require('./donations/donations.router')
 const usersRouter = require('./users/users.router')
 const causesRouter = require('./causes/causes.router')

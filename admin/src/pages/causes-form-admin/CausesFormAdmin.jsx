@@ -15,16 +15,19 @@ const CausesFormAdmin = ({ data, onSave }) => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const form = e.target
-        //console.log(form)
+        e.preventDefault()
+        const newFormData = {
+            ...formData,
+        };
+
+        console.log(newFormData)
     };
 
     return (
         <Box
-        sx={{
-            padding: 5
-        }}
+            sx={{
+                padding: 5
+            }}
         >
             <form
                 onSubmit={handleSubmit}>
@@ -67,13 +70,29 @@ const CausesFormAdmin = ({ data, onSave }) => {
                     margin="normal"
                 />
                 <TextField
-                    label="Description Points"
+                    label="Description Points 1"
                     variant="outlined"
-                    name="descriptionPoints"
+                    name="descriptionPoints1"
                     //value={formData.descriptionPoints.join('\n')}
                     onChange={handleChange}
-                    multiline
-                    rows={4}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Description Points 2"
+                    variant="outlined"
+                    name="descriptionPoints2"
+                    //value={formData.descriptionPoints.join('\n')}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Description Points 3"
+                    variant="outlined"
+                    name="descriptionPoints3"
+                    //value={formData.descriptionPoints.join('\n')}
+                    onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />
