@@ -44,10 +44,11 @@ const CausesTableAdminSection = () => {
               causesData.data.map((data, index) => {
                 return (
                   <CausesTableAdminContent
-                  key={index}
-                  title={data.title}
-                  collected={data.collected}
-                  goal={data.goal}
+                    key={index}
+                    title={data.title}
+                    collected={data.collected}
+                    goal={data.goal}
+                    data={data}
                   ></CausesTableAdminContent>
                 )
               })

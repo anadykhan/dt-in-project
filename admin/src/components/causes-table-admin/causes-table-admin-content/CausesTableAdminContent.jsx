@@ -3,10 +3,11 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { NavLink } from 'react-router-dom';
 
-const handleCausesEdit = () => {
-  console.log("Edit working!")
-}
+// const handleCausesEdit = () => {
+//   console.log("Edit working!")
+// }
 
 const handleCausesDelete = () => {
   console.log('Delete working!')
@@ -14,7 +15,7 @@ const handleCausesDelete = () => {
 
 export default function CausesTableAdminContent(props) {
 
-  const { title, collected, goal } = props
+  const { title, collected, goal, data } = props
 
   return (
     <TableRow
@@ -32,9 +33,9 @@ export default function CausesTableAdminContent(props) {
       <TableCell align="right">{goal}</TableCell>
       <TableCell align="right">
         <Box>
-          <Button
-            onClick={handleCausesEdit}
-          >Edit</Button>
+          <NavLink to={`/causes-edit/${data._id}`}>
+            <Button>Edit</Button>
+          </NavLink>
           <Button
             onClick={handleCausesDelete}
           >Delete</Button>

@@ -5,6 +5,7 @@ import RootAdmin from '../pages/root-admin/RootAdmin'
 import CausesFormAdmin from '../pages/causes-form-admin/CausesFormAdmin'
 import EventsTableAdminPage from '../pages/events-table-page/EventsTableAdminPage'
 import EventsFormPage from '../pages/events-form-page/EventsFormPage'
+import CausesEditAdmin from '../pages/causes-edit-admin/CausesEditAdmin'
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/events-form',
                 element: <EventsFormPage></EventsFormPage>
+            },
+            {
+                path: '/causes-edit/:id',
+                element: <CausesEditAdmin></CausesEditAdmin>
             }
         ]
     }
