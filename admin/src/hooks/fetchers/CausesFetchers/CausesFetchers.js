@@ -20,6 +20,6 @@ export const fetchUpdateCauseData = (cause) => {
     return axios.post(`${url}/updatecause`, cause)
 }
 
-export const fetchDeleteCausesData = () => {
-    console.log('delete causes data')
+export const fetchDeleteCausesData = (cause) => {
+    return axios.delete(url, { data: cause})
 }

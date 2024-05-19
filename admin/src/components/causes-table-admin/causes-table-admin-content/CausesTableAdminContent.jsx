@@ -4,18 +4,22 @@ import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
+import { useDeleteCauseData } from '../../../hooks/hooks/CausesHooks/CausesHooks';
 
 // const handleCausesEdit = () => {
 //   console.log("Edit working!")
 // }
 
-const handleCausesDelete = () => {
-  console.log('Delete working!')
-}
-
 export default function CausesTableAdminContent(props) {
 
+  const { mutate: deleteCause } = useDeleteCauseData()
+
   const { title, collected, goal, data } = props
+
+  const handleCauseDelete = () => {
+    console.log(data)
+    deleteCause(data)
+  }
 
   return (
     <TableRow
@@ -37,8 +41,10 @@ export default function CausesTableAdminContent(props) {
             <Button>Edit</Button>
           </NavLink>
           <Button
-            onClick={handleCausesDelete}
-          >Delete</Button>
+          onClick={handleCauseDelete}
+          >
+            Delete
+          </Button>
         </Box>
       </TableCell>
     </TableRow>
