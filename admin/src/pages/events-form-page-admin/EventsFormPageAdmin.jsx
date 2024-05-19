@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { useCreateEventData } from '../../hooks/hooks/event-hooks/EventHooks';
 
 const EventsFormPageAdmin = ({ data, onSave }) => {
     const [formData, setFormData] = useState(data);
+    const {mutate: addEvent} = useCreateEventData()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -14,21 +16,37 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
         }));
     };
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target
-        //console.log(form)
+
+        const newFormData = {
+            title: formData.title,
+            titleContent: formData.titleContent,
+            description: formData.description,
+            descriptionPoints: [formData.descriptionPoint1, formData.descriptionPoint2, formData.descriptionPoint3],
+            mission: formData.mission,
+            detail: formData.detail,
+            dateTime: formData.dateTime,
+            location: formData.location
+        };
+
+        addEvent(newFormData)
+
+        console.log(newFormData)
     };
 
     return (
         <Box
-        sx={{
-            padding: 5
-        }}
+            sx={{
+                padding: 5
+            }}
         >
             <form
                 onSubmit={handleSubmit}>
-                <TextField
+                {/* <TextField
                     label="ID"
                     variant="outlined"
                     name="_id"
@@ -36,7 +54,7 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
                     onChange={handleChange}
                     fullWidth
                     margin="normal"
-                />
+                /> */}
                 <TextField
                     label="Title"
                     variant="outlined"
@@ -67,13 +85,29 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
                     margin="normal"
                 />
                 <TextField
-                    label="Description Points"
+                    label="Description Point 1"
                     variant="outlined"
-                    name="descriptionPoints"
+                    name="descriptionPoint1"
                     //value={formData.descriptionPoints.join('\n')}
                     onChange={handleChange}
-                    multiline
-                    rows={4}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Description Point 2"
+                    variant="outlined"
+                    name="descriptionPoint2"
+                    //value={formData.descriptionPoints.join('\n')}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Description Point 3"
+                    variant="outlined"
+                    name="descriptionPoint3"
+                    //value={formData.descriptionPoints.join('\n')}
+                    onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />

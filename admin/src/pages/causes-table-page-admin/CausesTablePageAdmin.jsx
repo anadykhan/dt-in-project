@@ -18,7 +18,7 @@ const CausesTablePageAdmin = () => {
     return <h1>Loading</h1>
   }
 
-  console.log(causesData)
+  // console.log(causesData)
 
   return (
     <Box
