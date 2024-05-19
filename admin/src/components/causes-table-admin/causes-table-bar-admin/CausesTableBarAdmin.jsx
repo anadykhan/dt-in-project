@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-const CausesTableAdminBar = () => {
+const CausesTableBarAdmin = () => {
   return (
     <Box
     sx={{
@@ -21,4 +21,4 @@ const CausesTableAdminBar = () => {
   )
 }
 
-export default CausesTableAdminBar
+export default CausesTableBarAdmin

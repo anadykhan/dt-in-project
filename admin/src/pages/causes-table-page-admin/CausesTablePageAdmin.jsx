@@ -1,6 +1,3 @@
-import React from 'react'
-import CausesTableAdminBar from '../causes-table-admin-bar/CausesTableAdminBar';
-import CausesTableAdminContent from '../causes-table-admin-content/CausesTableAdminContent'
 import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -8,16 +5,20 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
+import { useGetCausesData } from '../../hooks/hooks/CausesHooks/CausesHooks';
+import CausesTableContentAdmin from '../../components/causes-table-admin/causes-table-content-admin/CausesTableContentAdmin';
 import Box from '@mui/material/Box';
-import { useGetCausesData } from '../../../hooks/hooks/CausesHooks/CausesHooks';
+import CausesTableBarAdmin from '../../components/causes-table-admin/causes-table-bar-admin/CausesTableBarAdmin';
 
-const CausesTableAdminSection = () => {
+const CausesTablePageAdmin = () => {
 
   const { data: causesData, isLoading: causesDataLoading } = useGetCausesData()
 
   if (causesDataLoading) {
     return <h1>Loading</h1>
   }
+
+  console.log(causesData)
 
   return (
     <Box
@@ -28,7 +29,7 @@ const CausesTableAdminSection = () => {
         gap: 4
       }}
     >
-      <CausesTableAdminBar></CausesTableAdminBar>
+      <CausesTableBarAdmin></CausesTableBarAdmin>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
@@ -43,13 +44,13 @@ const CausesTableAdminSection = () => {
             {
               causesData.data.map((data, index) => {
                 return (
-                  <CausesTableAdminContent
+                  <CausesTableContentAdmin
                     key={index}
                     title={data.title}
                     collected={data.collected}
                     goal={data.goal}
                     data={data}
-                  ></CausesTableAdminContent>
+                  ></CausesTableContentAdmin>
                 )
               })
             }
@@ -60,4 +61,4 @@ const CausesTableAdminSection = () => {
   )
 }
 
-export default CausesTableAdminSection
+export default CausesTablePageAdmin

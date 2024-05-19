@@ -10,14 +10,16 @@ import { useDeleteCauseData } from '../../../hooks/hooks/CausesHooks/CausesHooks
 //   console.log("Edit working!")
 // }
 
-export default function CausesTableAdminContent(props) {
+export default function CausesTableContentAdmin(props) {
 
   const { mutate: deleteCause } = useDeleteCauseData()
 
   const { title, collected, goal, data } = props
 
+  console.log(data)
+
   const handleCauseDelete = () => {
-    console.log(data)
+    //console.log(data)
     deleteCause(data)
   }
 

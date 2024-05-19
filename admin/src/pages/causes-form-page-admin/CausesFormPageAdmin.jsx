@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useCreateCauseData } from '../../hooks/hooks/CausesHooks/CausesHooks';
 
-const CausesFormAdmin = () => {
+const CausesFormPageAdmin = () => {
 
     const {mutate: addCause} = useCreateCauseData()
 
@@ -163,4 +163,4 @@ const CausesFormAdmin = () => {
     );
 };
 
-export default CausesFormAdmin;
+export default CausesFormPageAdmin;

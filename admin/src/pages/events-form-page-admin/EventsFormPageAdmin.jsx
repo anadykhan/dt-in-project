@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-const EventsFormPage = ({ data, onSave }) => {
+const EventsFormPageAdmin = ({ data, onSave }) => {
     const [formData, setFormData] = useState(data);
 
     const handleChange = (e) => {
@@ -119,4 +119,4 @@ const EventsFormPage = ({ data, onSave }) => {
     );
 };
 
-export default EventsFormPage;
+export default EventsFormPageAdmin;

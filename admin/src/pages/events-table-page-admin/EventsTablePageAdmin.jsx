@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import EventsTableAdminBar from '../../components/events-table-admin/events-table-admin-bar/EventsTableAdminBar';
 import EventsTableAdminContent from '../../components/events-table-admin/events-table-admin-content/EventsTableAdminContent';
 
-const EventsTableAdminPage = () => {
+const EventsTablePageAdmin = () => {
   return (
     <Box
       sx={{
@@ -19,4 +19,4 @@ const EventsTableAdminPage = () => {
   )
 }
 
-export default EventsTableAdminPage
+export default EventsTablePageAdmin

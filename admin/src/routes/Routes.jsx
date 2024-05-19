@@ -1,11 +1,12 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import CausesTableAdminSection from '../components/causes-table-admin/create-table-admin-section/CausesTableAdminSection'
 import RootAdmin from '../pages/root-admin/RootAdmin'
-import CausesFormAdmin from '../pages/causes-form-admin/CausesFormAdmin'
-import EventsTableAdminPage from '../pages/events-table-page/EventsTableAdminPage'
-import EventsFormPage from '../pages/events-form-page/EventsFormPage'
 import CausesEditAdmin from '../pages/causes-edit-admin/CausesEditAdmin'
+import EventsFormPageAdmin from '../pages/events-form-page-admin/EventsFormPageAdmin'
+import EventsTablePageAdmin from '../pages/events-table-page-admin/EventsTablePageAdmin'
+import CausesFormPageAdmin from '../pages/causes-form-page-admin/CausesFormPageAdmin'
+import CausesTablePageAdmin from '../pages/causes-table-page-admin/CausesTablePageAdmin'
+
 
 const router = createBrowserRouter([
     {
@@ -14,19 +15,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/causes-table',
-                element: <CausesTableAdminSection></CausesTableAdminSection>
+                element: <CausesTablePageAdmin></CausesTablePageAdmin>
             },
             {
                 path: '/causes-form',
-                element: <CausesFormAdmin></CausesFormAdmin>
+                element: <CausesFormPageAdmin></CausesFormPageAdmin>
             },
             {
                 path: '/events-table',
-                element: <EventsTableAdminPage></EventsTableAdminPage>
+                element: <EventsTablePageAdmin></EventsTablePageAdmin>
             },
             {
                 path: '/events-form',
-                element: <EventsFormPage></EventsFormPage>
+                element: <EventsFormPageAdmin></EventsFormPageAdmin>
             },
             {
                 path: '/causes-edit/:id',
