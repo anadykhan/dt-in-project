@@ -2,10 +2,7 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-
-const handleEventsEdit = () => {
-  console.log("Edit working!")
-}
+import { NavLink } from 'react-router-dom';
 
 const handleEventsDelete = () => {
   console.log('Delete working!')
@@ -31,9 +28,9 @@ export default function EventsTableContentAdmin(props) {
       <TableCell align="right">{location}</TableCell>
       <TableCell align="right">
         <Box>
-          <Button
-            onClick={handleEventsEdit}
-          >Edit</Button>
+          <NavLink to={`/events-edit/${data._id}`}>
+            <Button>Edit</Button>
+          </NavLink>
           <Button
             onClick={handleEventsDelete}
           >Delete</Button>

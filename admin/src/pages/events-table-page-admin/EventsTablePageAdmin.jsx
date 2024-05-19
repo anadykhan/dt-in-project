@@ -50,6 +50,7 @@ const EventsTablePageAdmin = () => {
                     title={data.title}
                     dateTime={data.dateTime}
                     location={data.location}
+                    data={data}
                   ></EventsTableContentAdmin>
                 )
               })
