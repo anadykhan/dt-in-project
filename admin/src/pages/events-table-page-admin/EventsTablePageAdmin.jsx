@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import EventsTableAdminBar from '../../components/events-table-admin/events-table-admin-bar/EventsTableAdminBar';
-import EventsTableAdminContent from '../../components/events-table-admin/events-table-admin-content/EventsTableAdminContent';
+import EventsTableBarAdmin from '../../components/events-table-admin/events-table-bar-admin/EventsTableBarAdmin';
+import EventsTableContentAdmin from '../../components/events-table-admin/events-table-content-admin/EventsTableContentAdmin';
 
 const EventsTablePageAdmin = () => {
   return (
@@ -13,8 +13,8 @@ const EventsTablePageAdmin = () => {
         gap: 4
       }}
     >
-      <EventsTableAdminBar></EventsTableAdminBar>
-      <EventsTableAdminContent></EventsTableAdminContent>
+      <EventsTableBarAdmin></EventsTableBarAdmin>
+      <EventsTableContentAdmin></EventsTableContentAdmin>
     </Box>
   )
 }

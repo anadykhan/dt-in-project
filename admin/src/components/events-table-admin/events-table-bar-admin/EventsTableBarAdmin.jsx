@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 
-const EventsTableAdminBar = () => {
+const EventsTableBarAdmin = () => {
   return (
     <Box
     sx={{
@@ -22,4 +22,4 @@ const EventsTableAdminBar = () => {
   )
 }
 
-export default EventsTableAdminBar
+export default EventsTableBarAdmin
