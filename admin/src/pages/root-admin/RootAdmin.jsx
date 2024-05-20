@@ -13,6 +13,7 @@ const RootAdmin = () => {
         flexDirection: 'column',
         '@media (min-width: 768px)': {
           flexDirection: 'row',
+          marginTop: 5
         },
       }}
     >

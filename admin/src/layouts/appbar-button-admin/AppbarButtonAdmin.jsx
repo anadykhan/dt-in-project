@@ -10,6 +10,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { NavLink } from 'react-router-dom';
+import { CiMenuBurger } from "react-icons/ci";
+
 
 export default function AppbarButtonAdmin(props) {
   const [open, setOpen] = React.useState(false);
@@ -20,6 +23,12 @@ export default function AppbarButtonAdmin(props) {
     setOpen(newOpen);
   };
 
+  const routes = [
+    '/causes-table',
+    '/events-table',
+    '/users-table'
+  ]
+
   const DrawerList = (
     <Box
       sx={{
@@ -28,27 +37,20 @@ export default function AppbarButtonAdmin(props) {
       role="presentation"
       onClick={toggleDrawer(false)}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+        {['Causes', 'Events', 'Users', 'Logout'].map((text, index) => (
+          <ListItem
+            key={text}
+            disablePadding>
+            <NavLink
+              to={`${routes[index]}`}
+            >
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} sx={{ textDecoration: 'none' }} />
+              </ListItemButton>
+            </NavLink>
           </ListItem>
         ))}
       </List>
@@ -56,16 +58,19 @@ export default function AppbarButtonAdmin(props) {
   );
 
   return (
-    <div>
+    <Box
+    >
       <Button
         onClick={toggleDrawer(true)}
         sx={{
+          fontSize: 25,
           ...sx
         }}
-      >Open drawer</Button>
+      ><CiMenuBurger></CiMenuBurger>
+      </Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
-    </div>
+    </Box>
   );
 }

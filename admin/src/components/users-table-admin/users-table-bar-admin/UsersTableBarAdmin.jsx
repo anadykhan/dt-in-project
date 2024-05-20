@@ -6,7 +6,6 @@ const UsersTableBarAdmin = () => {
   return (
     <Box
     sx={{
-      background: 'red',
       width: '100%',
       display: 'flex',
       justifyContent: 'center'
