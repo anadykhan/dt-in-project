@@ -8,6 +8,7 @@ import CausesFormPageAdmin from '../pages/causes-form-page-admin/CausesFormPageA
 import CausesTablePageAdmin from '../pages/causes-table-page-admin/CausesTablePageAdmin'
 import EventsEditPageAdmin from '../pages/events-edit-page-admin/EventsEditPageAdmin'
 import UsersTablePageAdmin from '../pages/users-table-page-admin/UsersTablePageAdmin'
+import UsersFormPageAdmin from '../pages/users-form-page-admin/UsersFormPageAdmin'
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: '/users-table',
                 element: <UsersTablePageAdmin></UsersTablePageAdmin>
+            },
+            {
+                path: '/users-form',
+                element: <UsersFormPageAdmin></UsersFormPageAdmin>
             }
         ]
     }
