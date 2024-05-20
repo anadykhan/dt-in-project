@@ -7,6 +7,8 @@ import EventsTablePageAdmin from '../pages/events-table-page-admin/EventsTablePa
 import CausesFormPageAdmin from '../pages/causes-form-page-admin/CausesFormPageAdmin'
 import CausesTablePageAdmin from '../pages/causes-table-page-admin/CausesTablePageAdmin'
 import EventsEditPageAdmin from '../pages/events-edit-page-admin/EventsEditPageAdmin'
+import UsersTablePageAdmin from '../pages/users-table-page-admin/UsersTablePageAdmin'
+
 
 
 const router = createBrowserRouter([
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: '/events-edit/:id',
                 element: <EventsEditPageAdmin></EventsEditPageAdmin>
+            },
+            {
+                path: '/users-table',
+                element: <UsersTablePageAdmin></UsersTablePageAdmin>
             }
         ]
     }
