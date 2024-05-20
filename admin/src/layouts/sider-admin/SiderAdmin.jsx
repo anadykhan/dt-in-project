@@ -10,14 +10,25 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Box from '@mui/material/Box';
+import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 200;
 
-export default function SiderAdmin() {
+const routes = [
+    '/causes-table',
+    '/events-table',
+    '/users-table'
+]
+
+export default function SiderAdmin(props) {
+
+    const {sx} = props
+
     return (
-        <Box sx={{ 
+        <Box sx={{
             display: 'flex',
-            }}>
+            ...sx
+        }}>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -34,13 +45,19 @@ export default function SiderAdmin() {
                 <Divider />
                 <List>
                     {['Causes', 'Events', 'Users', 'Logout'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
+                        <ListItem 
+                        key={text} 
+                        disablePadding>
+                            <NavLink 
+                            to={`${routes[index]}`}
+                            >
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} sx={{ textDecoration: 'none' }}/>
+                                </ListItemButton>
+                            </NavLink>
                         </ListItem>
                     ))}
                 </List>
