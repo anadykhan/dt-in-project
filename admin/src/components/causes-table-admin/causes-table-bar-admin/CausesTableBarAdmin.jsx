@@ -2,7 +2,10 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-const CausesTableBarAdmin = () => {
+const CausesTableBarAdmin = (props) => {
+
+  const {onClick} = props
+
   return (
     <Box
     sx={{
@@ -10,6 +13,7 @@ const CausesTableBarAdmin = () => {
       display: 'flex',
       justifyContent: 'center'
     }}
+    onClick={onClick}
     >
       <Button
       variant='contained'

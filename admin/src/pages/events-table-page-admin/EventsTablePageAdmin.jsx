@@ -11,8 +11,11 @@ import Paper from '@mui/material/Paper';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
 import { useGetEventsData } from '../../hooks/hooks/event-hooks/EventHooks';
+import { useNavigate } from 'react-router-dom';
+import AddButton from '../../components/general/add-button/AddButton';
 
 const EventsTablePageAdmin = () => {
+  const navigate = useNavigate()
   const initialDataCount = 15;
   const additionalDataCount = 10;
 
@@ -29,6 +32,11 @@ const EventsTablePageAdmin = () => {
 
   const remainingDataCount = eventsData.data.length - displayedDataCount;
 
+  const handleAddEvent = () => {
+    console.log('Working')
+    navigate('/events-form')
+  }
+
   return (
     <Box
       sx={{
@@ -38,7 +46,10 @@ const EventsTablePageAdmin = () => {
         gap: 4
       }}
     >
-      <EventsTableBarAdmin />
+      <AddButton
+      title='Add Event'
+      onClick={handleAddEvent}
+      ></AddButton>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

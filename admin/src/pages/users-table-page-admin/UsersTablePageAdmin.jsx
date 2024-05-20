@@ -11,8 +11,11 @@ import Button from '@mui/material/Button';
 import { useGetUsersData } from '../../hooks/hooks/users-hook/UsersHook';
 import UsersTableBarAdmin from '../../components/users-table-admin/users-table-bar-admin/UsersTableBarAdmin';
 import UsersTableContentAdmin from '../../components/users-table-admin/users-table-content-admin/UsersTableContentAdmin';
+import AddButton from '../../components/general/add-button/AddButton';
+import { useNavigate } from 'react-router-dom';
 
 const UsersTablePageAdmin = () => {
+  const navigate = useNavigate()
   const initialDataCount = 15;
   const additionalDataCount = 10;
 
@@ -29,6 +32,11 @@ const UsersTablePageAdmin = () => {
 
   const remainingDataCount = usersData.data.length - displayedDataCount;
 
+  const handleUserEvent = () => {
+    console.log('Working')
+    navigate('/users-form')
+  }
+
   return (
     <Box
       sx={{
@@ -38,7 +46,10 @@ const UsersTablePageAdmin = () => {
         gap: 4
       }}
     >
-      <UsersTableBarAdmin />
+      <AddButton
+      title='Add User'
+      onClick={handleUserEvent}
+      ></AddButton>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

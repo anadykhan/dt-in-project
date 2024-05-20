@@ -28,7 +28,7 @@ export default function UsersTableContentAdmin(props) {
         }}>
         {username}
       </TableCell>
-      <TableCell align="right">{password}</TableCell>
+      <TableCell align="right">{password.slice(0, 9)}...</TableCell>
       <TableCell align="right">{email}</TableCell>
       <TableCell align="right">
         <Box>

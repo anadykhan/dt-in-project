@@ -11,8 +11,11 @@ import CausesTableContentAdmin from '../../components/causes-table-admin/causes-
 import Box from '@mui/material/Box';
 import CausesTableBarAdmin from '../../components/causes-table-admin/causes-table-bar-admin/CausesTableBarAdmin';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+import AddButton from '../../components/general/add-button/AddButton';
 
 const CausesTablePageAdmin = () => {
+  const navigate = useNavigate()
   const initialDataCount = 15;
   const additionalDataCount = 10;
 
@@ -29,6 +32,11 @@ const CausesTablePageAdmin = () => {
 
   const remainingDataCount = causesData.data.length - displayedDataCount;
 
+  const handleAddCause = () => {
+    console.log('Working')
+    navigate('/causes-form')
+  }
+
   return (
     <Box
       sx={{
@@ -38,7 +46,10 @@ const CausesTablePageAdmin = () => {
         gap: 4
       }}
     >
-      <CausesTableBarAdmin />
+      <AddButton
+      title='Add Cause'
+      onClick={handleAddCause}
+      ></AddButton>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
