@@ -32,7 +32,7 @@ export default function UsersTableContentAdmin(props) {
       <TableCell align="right">{email}</TableCell>
       <TableCell align="right">
         <Box>
-          <NavLink to={`/events-edit/${data._id}`}>
+          <NavLink to={`/users-edit/${data._id}`}>
             <Button>Edit</Button>
           </NavLink>
           <Button
