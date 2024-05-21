@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { useCreateEventData } from '../../hooks/hooks/event-hooks/EventHooks';
 import { useCreateUserData } from '../../hooks/hooks/users-hook/UsersHook';
+import { useNavigate } from 'react-router-dom';
 
 const UsersFormPageAdmin = ({ data, onSave }) => {
     const [formData, setFormData] = useState(data);
     const {mutate: addUser} = useCreateUserData()
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,6 +31,8 @@ const UsersFormPageAdmin = ({ data, onSave }) => {
         };
     
         addUser(newFormData);
+
+        navigate('/users-table')
     
         console.log(newFormData);
 

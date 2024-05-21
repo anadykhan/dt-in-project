@@ -3,10 +3,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useCreateCauseData } from '../../hooks/hooks/CausesHooks/CausesHooks';
+import { useNavigate } from 'react-router-dom';
 
 const CausesFormPageAdmin = () => {
 
     const {mutate: addCause} = useCreateCauseData()
+    const navigate = useNavigate()
 
     // CauseFormAdminHandler.js
     const handleCauseFormAdminSubmit = (e) => {
@@ -50,6 +52,8 @@ const CausesFormPageAdmin = () => {
         };
 
         addCause(newFormData)
+
+        navigate('/causes-table')
 
         console.log(newFormData);
     };

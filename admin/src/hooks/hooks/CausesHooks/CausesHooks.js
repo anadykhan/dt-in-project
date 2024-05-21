@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchCreateCauseData, fetchDeleteCausesData, fetchGetCausesData, fetchGetSingleCauseData, fetchUpdateCauseData } from '../../fetchers/CausesFetchers/CausesFetchers'
 
 export const useGetCausesData = () => {
@@ -16,8 +16,14 @@ export const useGetSingleCauseData = (id) => {
 }
 
 export const useCreateCauseData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchCreateCauseData
+        fetchCreateCauseData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('causes')
+            }
+        }
     )
 }
 
@@ -28,7 +34,13 @@ export const useUpdateCauseData = () => {
 }
 
 export const useDeleteCauseData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchDeleteCausesData
+        fetchDeleteCausesData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('causes')
+            }
+        }
     );
 }

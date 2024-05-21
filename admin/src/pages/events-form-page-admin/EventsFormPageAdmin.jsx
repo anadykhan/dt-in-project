@@ -3,10 +3,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useCreateEventData } from '../../hooks/hooks/event-hooks/EventHooks';
+import { useNavigate } from 'react-router-dom';
 
 const EventsFormPageAdmin = ({ data, onSave }) => {
     const [formData, setFormData] = useState(data);
     const {mutate: addEvent} = useCreateEventData()
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,6 +36,8 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
         };
 
         addEvent(newFormData)
+
+        navigate('/events-table')
 
         console.log(newFormData)
     };

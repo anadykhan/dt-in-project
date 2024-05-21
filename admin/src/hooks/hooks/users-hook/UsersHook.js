@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchCreateUserData, fetchDeleteUserData, fetchGetSingleUserData, fetchGetUsersData, fetchUpdateUserData } from '../../fetchers/users-fetchers/UsersFetchers'
 
 export const useGetUsersData = () => {
@@ -16,8 +16,14 @@ export const useGetSingleUserData = (id) => {
 }
 
 export const useCreateUserData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchCreateUserData
+        fetchCreateUserData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('users')
+            }
+        }
     )
 }
 
@@ -28,7 +34,13 @@ export const useUpdateUserData = () => {
 }
 
 export const useDeleteUserData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchDeleteUserData
+        fetchDeleteUserData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('users')
+            }
+        }
     );
 }

@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchCreateEventData, fetchDeleteEventData, fetchGetEventsData, fetchGetSingleEventData, fetchUpdateEventData } from '../../fetchers/events-fetchers/EventsFetchers'
 
 export const useGetEventsData = () => {
@@ -16,8 +16,14 @@ export const useGetSingleEventData = (id) => {
 }
 
 export const useCreateEventData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchCreateEventData
+        fetchCreateEventData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('events')
+            }
+        }
     )
 }
 
@@ -28,7 +34,13 @@ export const useUpdateEventData = () => {
 }
 
 export const useDeleteEventData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchDeleteEventData
+        fetchDeleteEventData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('events')
+            }
+        }
     );
 }
