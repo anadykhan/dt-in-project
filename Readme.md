@@ -1,2 +1,3 @@
-//Nav font black and no underline
-//Header profile
+//Nav list active color 
+//Page title
+//User info and CRUD

@@ -65,6 +65,7 @@ export default function AppbarButtonAdmin(props) {
         onClick={toggleDrawer(true)}
         sx={{
           fontSize: 25,
+          color: 'white',
           ...sx
         }}
       ><CiMenuBurger></CiMenuBurger>

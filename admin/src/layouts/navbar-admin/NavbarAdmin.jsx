@@ -1,6 +1,7 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import AppbarButtonAdmin from '../appbar-button-admin/AppbarButtonAdmin';
 
 const NavbarAdmin = () => {
   return (
@@ -11,9 +12,10 @@ const NavbarAdmin = () => {
         background: '#0076CE',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'end',
+        justifyContent: 'space-between',
     }}
     >
+      <AppbarButtonAdmin></AppbarButtonAdmin>
         <Avatar
         sx={{
             marginRight: 5

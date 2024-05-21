@@ -2,22 +2,23 @@ const sideitem = [
     {
         key: 1, 
         title: 'Cause',
-        route: '/causes-table'
+        route: '/causes-table',
+        icon: '',
+        
     },
     {
         key: 1, 
-        title: 'Cause',
-        route: '/causes-table'
+        title: 'Events',
+        route: '/events-table'
     },
     {
         key: 1, 
-        title: 'Cause',
-        route: '/causes-table'
+        title: 'Users',
+        route: '/users-table'
     },
     {
         key: 1, 
-        title: 'Cause',
-        route: '/causes-table'
+        title: 'Logout',
     }
 ]
 
