@@ -13,6 +13,7 @@ import UsersTableBarAdmin from '../../components/users-table-admin/users-table-b
 import UsersTableContentAdmin from '../../components/users-table-admin/users-table-content-admin/UsersTableContentAdmin';
 import AddButton from '../../components/general/add-button/AddButton';
 import { useNavigate } from 'react-router-dom';
+import tableHeader from '../../utils/tabledata';
 
 const UsersTablePageAdmin = () => {
   const navigate = useNavigate()
@@ -54,10 +55,13 @@ const UsersTablePageAdmin = () => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Username</TableCell>
-              <TableCell align="right">Password</TableCell>
-              <TableCell align="right">Email ($)</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              {
+                tableHeader.users.map((item) => {
+                  return (
+                    <TableCell key={item.key} align="right">{item.item}</TableCell>
+                  )
+                })
+              }
             </TableRow>
           </TableHead>
           <TableBody>

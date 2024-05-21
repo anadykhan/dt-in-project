@@ -13,6 +13,7 @@ import CausesTableBarAdmin from '../../components/causes-table-admin/causes-tabl
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../components/general/add-button/AddButton';
+import tableHeader from '../../utils/tabledata';
 
 const CausesTablePageAdmin = () => {
   const navigate = useNavigate()
@@ -47,17 +48,20 @@ const CausesTablePageAdmin = () => {
       }}
     >
       <AddButton
-      title='Add Cause'
-      onClick={handleAddCause}
+        title='Add Cause'
+        onClick={handleAddCause}
       ></AddButton>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell align="right">Collected ($)</TableCell>
-              <TableCell align="right">Goal ($)</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              {
+                tableHeader.casues.map((item) => {
+                  return (
+                    <TableCell key={item.key} align="right">{item.item}</TableCell>
+                  )
+                })
+              }
             </TableRow>
           </TableHead>
           <TableBody>

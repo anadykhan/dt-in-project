@@ -12,6 +12,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { NavLink } from 'react-router-dom';
 import { CiMenuBurger } from "react-icons/ci";
+import sideitem from '../../utils/sideItem';
 
 
 export default function AppbarButtonAdmin(props) {
@@ -37,18 +38,18 @@ export default function AppbarButtonAdmin(props) {
       role="presentation"
       onClick={toggleDrawer(false)}>
       <List>
-        {['Causes', 'Events', 'Users', 'Logout'].map((text, index) => (
+        {sideitem.map((item, index) => (
           <ListItem
-            key={text}
+            key={index}
             disablePadding>
             <NavLink
-              to={`${routes[index]}`}
+              to={item.route}
             >
               <ListItemButton>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ textDecoration: 'none' }} />
+                <ListItemText primary={item.title} sx={{ textDecoration: 'none' }} />
               </ListItemButton>
             </NavLink>
           </ListItem>

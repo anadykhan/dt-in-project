@@ -9,7 +9,7 @@ export default function EventsTableContentAdmin(props) {
 
   const { mutate: deleteEvent } = useDeleteEventData()
 
-  const { title, dateTime, location, data } = props
+  const { title, dateTime, location, data, sx } = props
 
   const handleEventsDelete = () => {
     deleteEvent(data)
@@ -24,13 +24,14 @@ export default function EventsTableContentAdmin(props) {
         component="th"
         scope="row"
         sx={{
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          ...sx
         }}>
         {title}
       </TableCell>
-      <TableCell align="right">{dateTime}</TableCell>
-      <TableCell align="right">{location}</TableCell>
-      <TableCell align="right">
+      <TableCell align="right" sx={{...sx}}>{dateTime}</TableCell>
+      <TableCell align="right" sx={{...sx}}>{location}</TableCell>
+      <TableCell align="right" sx={{...sx}}>
         <Box>
           <NavLink to={`/events-edit/${data._id}`}>
             <Button>Edit</Button>

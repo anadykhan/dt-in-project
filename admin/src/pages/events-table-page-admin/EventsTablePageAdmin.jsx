@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import { useGetEventsData } from '../../hooks/hooks/event-hooks/EventHooks';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../components/general/add-button/AddButton';
+import tableHeader from '../../utils/tabledata';
 
 const EventsTablePageAdmin = () => {
   const navigate = useNavigate()
@@ -47,17 +48,20 @@ const EventsTablePageAdmin = () => {
       }}
     >
       <AddButton
-      title='Add Event'
-      onClick={handleAddEvent}
+        title='Add Event'
+        onClick={handleAddEvent}
       ></AddButton>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell align="right">Date and Time ($)</TableCell>
-              <TableCell align="right">Location ($)</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              {
+                tableHeader.events.map((item) => {
+                  return (
+                    <TableCell key={item.key} align="right">{item.item}</TableCell>
+                  )
+                })
+              }
             </TableRow>
           </TableHead>
           <TableBody>
@@ -69,6 +73,11 @@ const EventsTablePageAdmin = () => {
                   dateTime={data.dateTime}
                   location={data.location}
                   data={data}
+                  sx={{
+                    '@media (max-width: 500px)': {
+                      padding: 0.5
+                    },
+                  }}
                 />
               ))
             }
