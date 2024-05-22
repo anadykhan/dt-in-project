@@ -24,7 +24,7 @@ const NavbarAdmin = () => {
         fontSize: 20,
       }}
       >
-        Wecome, Kutta Ibad
+        Wecome, John Doe
       </Typography>
       <AvatarOption></AvatarOption>
     </Box>

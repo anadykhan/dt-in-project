@@ -1,25 +1,31 @@
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { FaUser, FaDonate } from "react-icons/fa";
+import { MdEventNote } from "react-icons/md";
+
 const sideitem = [
     {
         key: 1, 
         title: 'Cause',
         route: '/causes-table',
-        icon: '',
-        
+        icon: FaDonate 
     },
     {
-        key: 1, 
+        key: 2, 
         title: 'Events',
-        route: '/events-table'
+        route: '/events-table',
+        icon: MdEventNote 
     },
     {
-        key: 1, 
+        key: 3, 
         title: 'Users',
-        route: '/users-table'
+        route: '/users-table',
+        icon: FaUser
     },
-    {
-        key: 1, 
-        title: 'Logout',
-    }
-]
+    // {
+    //     key: 4, 
+    //     title: 'Logout',
+    //     icon: RiLogoutBoxRLine
+    // }
+];
 
 export default sideitem;

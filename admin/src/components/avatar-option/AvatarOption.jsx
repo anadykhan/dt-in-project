@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Box from '@mui/material/Box';
 import avatarOptions from '../../utils/avatarOptions';
+import { Link, NavLink } from 'react-router-dom';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -51,7 +52,11 @@ const AvatarOption = () => {
             >
                 {avatarOptions.map((data) => (
                     <MenuItem key={data.key} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{data.item}</Typography>
+                        <Typography textAlign="center">
+                            <NavLink className="side-nav-bar" to={data.route}>
+                                {data.item}
+                            </NavLink>
+                        </Typography>
                     </MenuItem>
                 ))}
             </Menu>

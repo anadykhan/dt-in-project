@@ -18,6 +18,7 @@ const AdminProfile = (props) => {
             gap: 2,
             boxShadow: 2,
             padding: 3,
+            background: 'white',
             '@media (min-width: 650px)': {
                 // flexDirection: 'row',
                 width: 500
