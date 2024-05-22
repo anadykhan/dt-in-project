@@ -16,6 +16,6 @@ api.use('/causes', causesRouter)
 api.use('/events', eventsRouter)
 api.use('/login', loginRouter)
 api.use('/registration', registrationRouter)
-api.use('/admins', )
+api.use('/admins', adminsRouter)
 
 module.exports = api

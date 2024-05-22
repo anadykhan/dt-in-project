@@ -3,7 +3,7 @@ const { getAllAdmins, getSingleAdmin, createAdmin, updateAdmin, deleteAdmin } = 
 async function httpGetAllAdmins(req, res) {
     const admins = await getAllAdmins()
     try {
-        return res.status(200).json(admin)
+        return res.status(200).json(admins)
     } catch (err) {
         return res.status(500).json(err)
     }
