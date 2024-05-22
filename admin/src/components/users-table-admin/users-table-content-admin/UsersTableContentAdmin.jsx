@@ -1,9 +1,9 @@
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 import { useDeleteUserData } from '../../../hooks/hooks/users-hook/UsersHook';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 export default function UsersTableContentAdmin(props) {
 

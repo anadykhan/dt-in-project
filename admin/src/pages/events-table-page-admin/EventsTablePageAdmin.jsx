@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
 import EventsTableBarAdmin from '../../components/events-table-admin/events-table-bar-admin/EventsTableBarAdmin';
 import EventsTableContentAdmin from '../../components/events-table-admin/events-table-content-admin/EventsTableContentAdmin';
 import TableContainer from '@mui/material/TableContainer';
@@ -14,6 +13,7 @@ import { useGetEventsData } from '../../hooks/hooks/event-hooks/EventHooks';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../components/general/add-button/AddButton';
 import tableHeader from '../../utils/tabledata';
+import Box from '@mui/material/Box';
 
 const EventsTablePageAdmin = () => {
   const navigate = useNavigate()

@@ -8,12 +8,11 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import { useGetCausesData } from '../../hooks/hooks/CausesHooks/CausesHooks';
 import CausesTableContentAdmin from '../../components/causes-table-admin/causes-table-content-admin/CausesTableContentAdmin';
-import Box from '@mui/material/Box';
-import CausesTableBarAdmin from '../../components/causes-table-admin/causes-table-bar-admin/CausesTableBarAdmin';
-import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../components/general/add-button/AddButton';
 import tableHeader from '../../utils/tabledata';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 const CausesTablePageAdmin = () => {
   const navigate = useNavigate()

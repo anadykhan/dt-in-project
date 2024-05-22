@@ -1,7 +1,9 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
 import AppbarButtonAdmin from '../appbar-button-admin/AppbarButtonAdmin';
+import AvatarOption from '../../components/avatar-option/AvatarOption';
+import { Typography } from '@mui/material'
+import Box from '@mui/material/Box';
 
 const NavbarAdmin = () => {
   return (
@@ -16,12 +18,15 @@ const NavbarAdmin = () => {
     }}
     >
       <AppbarButtonAdmin></AppbarButtonAdmin>
-        <Avatar
-        sx={{
-            marginRight: 5
-        }} 
-        alt="Remy Sharp" 
-        src="admin/src/assets/react.svg" />
+      <Typography
+      sx={{
+        color: 'white',
+        fontSize: 20,
+      }}
+      >
+        Wecome, Kutta Ibad
+      </Typography>
+      <AvatarOption></AvatarOption>
     </Box>
   )
 }

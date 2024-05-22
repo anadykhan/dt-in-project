@@ -1,9 +1,9 @@
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 import { useDeleteEventData } from '../../../hooks/hooks/event-hooks/EventHooks';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 export default function EventsTableContentAdmin(props) {
 

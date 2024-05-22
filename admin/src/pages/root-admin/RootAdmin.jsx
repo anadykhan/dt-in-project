@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Box from '@mui/material/Box';
 import NavbarAdmin from '../../layouts/navbar-admin/NavbarAdmin';
+import Box from '@mui/material/Box';
 
 const RootAdmin = () => {
   return (
