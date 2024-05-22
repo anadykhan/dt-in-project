@@ -10,6 +10,7 @@ import EventsEditPageAdmin from '../pages/events-edit-page-admin/EventsEditPageA
 import UsersTablePageAdmin from '../pages/users-table-page-admin/UsersTablePageAdmin'
 import UsersFormPageAdmin from '../pages/users-form-page-admin/UsersFormPageAdmin'
 import UsersEditPageAdmin from '../pages/users-edit-page-admin/UsersEditPageAdmin'
+import AdminProfilePage from '../pages/admin-profile-page/AdminProfilePage'
 
 
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: '/users-edit/:id',
                 element: <UsersEditPageAdmin></UsersEditPageAdmin>
+            },
+            {
+                path: '/admin-profile/:id',
+                element: <AdminProfilePage></AdminProfilePage>
             }
         ]
     }
