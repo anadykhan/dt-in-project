@@ -17,8 +17,6 @@ async function authenticateToken(req, res, next) {
         //req.accessToken = { value: accessToken, exp: decodedAccessToken.exp }
         req.userId = { id: decodedAccessToken.userId }
 
-        console.log(req.userId)
-
         next()
     } catch (error) {
         if (error instanceof jwt.TokenExpiredError) {

@@ -1,9 +1,12 @@
+const { getSingleUser } = require("../../models/users/users.model")
+
 async function httpGetCurrentUser (req, res) {
-    try{
-        //return res.status(200).json(req.user)
-        console.log(req.user)
+    try {
+        const userId = req.userId.id
+        const searchedUser = await getSingleUser(userId)
+        return await res.status(200).json(searchedUser)
     } catch (error) {
-        return res.status(500).json({message: error.message})
+        return res.status(500).json({ message: error.message }) 
     }
 }
 
