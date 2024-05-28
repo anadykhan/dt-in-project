@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <Box
             sx={{
-                width: 'full',
+                width: '100%',
                 height: 800,
                 position: 'relative',
                 backgroundImage: `url(src/assets/seth-doyle-zf9_yiAekJs-unsplash.jpg)`,
@@ -20,7 +20,7 @@ const Banner = () => {
                 flexDirection: 'column'
             }}
         >
-           
+
             {/* Pseudo-element for dimming effect */}
             <Box
                 sx={{
@@ -33,12 +33,12 @@ const Banner = () => {
                     zIndex: 1, // Ensure it's above the background image
                 }}
             />
-            <NavigationBar
+            {/* <NavigationBar
                 sx={{
                     position: 'relative',
                     zIndex: 2,
                 }}
-            />
+            /> */}
             <Box
                 sx={{
                     height: '100%',
@@ -49,7 +49,7 @@ const Banner = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     color: 'white',
-                    width: 700,
+                    //width: 700,
                     gap: 3
                 }}
             >
@@ -73,13 +73,21 @@ const Banner = () => {
                         Live Longer
                     </Typography>
                 </Box>
-                <Typography variant="body1" gutterBottom sx={{ textAlign: 'center' }}>
+                <Typography
+                    variant="body1"
+                    gutterBottom
+                    sx={{
+                        textAlign: 'center',
+                        '@media (min-width: 1000px)': {
+                            width: 800
+                          },
+                    }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem officiis nesciunt at dolore voluptates, deserunt sed pariatur architecto ducimus consequatur?
                 </Typography>
                 <Box
-                sx={{
-                    marginTop: 5
-                }}
+                    sx={{
+                        marginTop: 5
+                    }}
                 >
                     <CommonButton
                         content='LEARN MORE'

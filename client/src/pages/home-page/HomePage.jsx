@@ -9,16 +9,17 @@ const HomePage = () => {
   return (
     <Box
     sx={{
+      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       gap: 15
     }}
     >
         <Banner></Banner>
-        <CategorySection></CategorySection>
-        <AccordionSection></AccordionSection>
-        <CauseSection></CauseSection>
-        <UpcomingEventSection></UpcomingEventSection>
+        {/* <CategorySection></CategorySection>
+        <AccordionSection></AccordionSection> */}
+        {/* <CauseSection></CauseSection>
+        <UpcomingEventSection></UpcomingEventSection> */}
 
     </Box>
   )
