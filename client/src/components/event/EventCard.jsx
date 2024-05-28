@@ -17,7 +17,7 @@ const EventCard = (props) => {
             flexDirection: 'row-reverse',
             justifyContent: 'start',
             width: 600,
-            height: 170,
+            height: 200,
             gap: 2,
             borderRadius: 4
         }}>
@@ -27,6 +27,7 @@ const EventCard = (props) => {
             }}>
                 <CardContent sx={{
                     display: 'flex',
+                    justifyContent: 'space-evenly',
                     flexDirection: 'column',
                     flex: '1 0 auto',
                     width: '90%',
