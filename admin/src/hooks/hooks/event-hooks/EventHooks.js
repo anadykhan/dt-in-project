@@ -28,8 +28,14 @@ export const useCreateEventData = () => {
 }
 
 export const useUpdateEventData = () => {
+    const queryClient = useQueryClient()
     return useMutation(
-        fetchUpdateEventData
+        fetchUpdateEventData,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('events')
+            }
+        }
     )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useGetSingleEventData, useUpdateEventData } from '../../hooks/hooks/event-hooks/EventHooks';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -9,40 +9,44 @@ const EventsEditPageAdmin = () => {
     const eventId = useParams()
     const {mutate: updateEvent} = useUpdateEventData()
     const { data: singleEventData, isLoading: singleEventDataLoading } = useGetSingleEventData(eventId.id)
+    const navigate = useNavigate()
 
 
     if (singleEventDataLoading) {
         return <h1>Loading</h1>
     }
 
-    console.log(singleEventData)
+    // console.log(singleEventData.data._id)
 
     const handleSubmit = (e) => {
 
 
         e.preventDefault();
+    
         const form = e.target;
-
-        // Extract form data
+    
         const formData = {
             _id: singleEventData.data._id,
+            startTime: form.startTime.value,
+            endTime: form.endTime.value,
+            startDate: form.startDate.value,
+            startMonth: form.startMonth.value,
+            location: form.location.value,
+            image: form.image.value,
             title: form.title.value,
+            content: form.content.value,
             titleContent: form.titleContent.value,
             description: form.description.value,
-            descriptionPoints: [
-                form.descriptionPoint1.value,
-                form.descriptionPoint2.value,
-                form.descriptionPoint3.value,
-            ],
+            descriptionPoints: [form.descriptionPoint1.value, form.descriptionPoint2.value, form.descriptionPoint3.value],
             mission: form.mission.value,
-            detail: form.detail.value,
-            dateTime: form.dateTime.value,
-            location: form.location.value
+            missionPoints: [form.missionPoint1.value, form.missionPoint2.value, form.missionPoint3.value, form.missionPoint4.value]
         };
 
-        console.log(formData);
+        console.log(formData)
 
         updateEvent(formData)
+
+        navigate('/events-table');
     };
 
     return (
@@ -63,10 +67,66 @@ const EventsEditPageAdmin = () => {
                     margin="normal"
                 /> */}
                 <TextField
+                    label="Start Time"
+                    variant="outlined"
+                    name="startTime"
+                    defaultValue={singleEventData.data.startTime}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="End Time"
+                    variant="outlined"
+                    name="endTime"
+                    defaultValue={singleEventData.data.endTime}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Start Date"
+                    variant="outlined"
+                    name="startDate"
+                    defaultValue={singleEventData.data.startDate}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Start Month"
+                    variant="outlined"
+                    name="startMonth"
+                    defaultValue={singleEventData.data.startMonth}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Location"
+                    variant="outlined"
+                    name="location"
+                    defaultValue={singleEventData.data.location}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Image Link"
+                    variant="outlined"
+                    name="image"
+                    defaultValue={singleEventData.data.image}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
                     label="Title"
                     variant="outlined"
                     name="title"
                     defaultValue={singleEventData.data.title}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Content"
+                    variant="outlined"
+                    name="content"
+                    defaultValue={singleEventData.data.content}
                     fullWidth
                     margin="normal"
                 />
@@ -121,26 +181,34 @@ const EventsEditPageAdmin = () => {
                     margin="normal"
                 />
                 <TextField
-                    label="Detail"
+                    label="Mission Point 1"
                     variant="outlined"
-                    name="detail"
-                    defaultValue={singleEventData.data.detail}
+                    name="missionPoint1"
+                    defaultValue={singleEventData.data.missionPoints[0]}
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Date and time"
+                    label="Mission Point 2"
                     variant="outlined"
-                    name="dateTime"
-                    defaultValue={singleEventData.data.dateTime}
+                    name="missionPoint2"
+                    defaultValue={singleEventData.data.missionPoints[1]}
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Location"
+                    label="Mission Point 3"
                     variant="outlined"
-                    name="location"
-                    defaultValue={singleEventData.data.location}
+                    name="missionPoint3"
+                    defaultValue={singleEventData.data.missionPoints[2]}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Mission Point 4"
+                    variant="outlined"
+                    name="missionPoint4"
+                    defaultValue={singleEventData.data.missionPoints[3]}
                     fullWidth
                     margin="normal"
                 />

@@ -22,24 +22,30 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const form = e.target
-
+    
+        const form = e.target;
+    
         const newFormData = {
-            title: formData.title,
-            titleContent: formData.titleContent,
-            description: formData.description,
-            descriptionPoints: [formData.descriptionPoint1, formData.descriptionPoint2, formData.descriptionPoint3],
-            mission: formData.mission,
-            detail: formData.detail,
-            dateTime: formData.dateTime,
-            location: formData.location
+            startTime: form.startTime.value,
+            endTime: form.endTime.value,
+            startDate: form.startDate.value,
+            startMonth: form.startMonth.value,
+            location: form.location.value,
+            image: form.image.value,
+            title: form.title.value,
+            content: form.content.value,
+            titleContent: form.titleContent.value,
+            description: form.description.value,
+            descriptionPoints: [form.descriptionPoint1.value, form.descriptionPoint2.value, form.descriptionPoint3.value],
+            mission: form.mission.value,
+            missionPoints: [form.missionPoint1.value, form.missionPoint2.value, form.missionPoint3.value, form.missionPoint4.value]
         };
-
-        addEvent(newFormData)
-
-        navigate('/events-table')
-
-        console.log(newFormData)
+    
+        addEvent(newFormData);
+    
+        navigate('/events-table');
+    
+        console.log(newFormData);
     };
 
     return (
@@ -60,9 +66,72 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
                     margin="normal"
                 /> */}
                 <TextField
+                    label="Start Time"
+                    variant="outlined"
+                    name="startTime"
+                    //value={formData.title}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="End Time"
+                    variant="outlined"
+                    name="endTime"
+                    //value={formData.title}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Start Date"
+                    variant="outlined"
+                    name="startDate"
+                    //value={formData.title}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Start Month"
+                    variant="outlined"
+                    name="startMonth"
+                    //value={formData.title}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Location"
+                    variant="outlined"
+                    name="location"
+                    //value={formData.priority}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Image Link"
+                    variant="outlined"
+                    name="image"
+                    //value={formData.priority}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
                     label="Title"
                     variant="outlined"
                     name="title"
+                    //value={formData.title}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Content"
+                    variant="outlined"
+                    name="content"
                     //value={formData.title}
                     onChange={handleChange}
                     fullWidth
@@ -125,28 +194,37 @@ const EventsFormPageAdmin = ({ data, onSave }) => {
                     margin="normal"
                 />
                 <TextField
-                    label="Detail"
+                    label="Mission Point 1"
                     variant="outlined"
-                    name="detail"
-                    //value={formData.goal}
+                    name="missionPoint1"
+                    //value={formData.collected}
                     onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Date and time"
+                    label="Mission Point 2"
                     variant="outlined"
-                    name="dateTime"
-                    //value={formData.cardDetail}
+                    name="missionPoint2"
+                    //value={formData.collected}
                     onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />
                 <TextField
-                    label="Location"
+                    label="Mission Point 3"
                     variant="outlined"
-                    name="location"
-                    //value={formData.priority}
+                    name="missionPoint3"
+                    //value={formData.collected}
+                    onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    label="Mission Point 4"
+                    variant="outlined"
+                    name="missionPoint4"
+                    //value={formData.collected}
                     onChange={handleChange}
                     fullWidth
                     margin="normal"

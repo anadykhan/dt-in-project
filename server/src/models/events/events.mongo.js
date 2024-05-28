@@ -1,7 +1,42 @@
 const mongoose = require('mongoose');
 
 const eventsSchema = new mongoose.Schema({
+    startTime: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    endTime: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    startDate: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    startMonth: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    location: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    image: {
+        type: String,
+        required: true,
+        trim: true
+    },
     title: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    content: {
         type: String,
         required: true,
         trim: true
@@ -19,31 +54,16 @@ const eventsSchema = new mongoose.Schema({
     descriptionPoints: {
         type: [String],
         required: true,
-        validate: [arrayLimit, 'At least one description point is required.']
     },
     mission: {
         type: String,
         required: true,
         trim: true
     },
-    detail: {
-        type: String,
+    missionPoints: {
+        type: [String],
         required: true,
-        trim: true
-    },
-    dateTime: {
-        type: Date,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true,
-        trim: true
     }
 });
-
-function arrayLimit(val) {
-    return val.length > 0;
-}
 
 module.exports = mongoose.model('Event', eventsSchema);
