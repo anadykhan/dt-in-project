@@ -60,7 +60,10 @@ const EventCard = (props) => {
                             <Typography>{location}</Typography>
                         </Box>
                     </Box>
-                    <Typography component="div" variant="h5">
+                    <Typography 
+                    component="div" 
+                    variant="h5"
+                    >
                         {title}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -89,7 +92,14 @@ const EventCard = (props) => {
                         zIndex: 1,
                     }}
                 >
-                    <Typography variant='h3'>{startDate}</Typography>
+                    <Typography 
+                    variant='h3'
+                    sx={{
+                        '@media (max-width: 500px)': {
+                            fontSize: 39
+                          },
+                    }}
+                    >{startDate}</Typography>
                     <Typography>{startMonth}</Typography>
                 </Box>
                 <CardMedia
