@@ -8,7 +8,7 @@ const AccordionCard = (props) => {
     return (
         <Box
             sx={{
-                width: 250,
+                width: '90%',
                 height: 230,
                 display: 'flex',
                 justifyContent: 'center',

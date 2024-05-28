@@ -10,7 +10,7 @@ const AccordionContent = () => {
     return (
         <Box
             sx={{
-                width: 500,
+                width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 2,
