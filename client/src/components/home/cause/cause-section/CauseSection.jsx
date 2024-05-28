@@ -22,7 +22,9 @@ const CauseSection = () => {
       <Box
       sx={{
         display: 'flex',
-        gap: 5
+        justifyContent: 'center',
+        gap: 5,
+        flexWrap: 'wrap'
       }}
       >
         <CausesCard

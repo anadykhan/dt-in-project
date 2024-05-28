@@ -28,7 +28,7 @@ const CauseHeader = (props) => {
                 {/* START DONATING FOR THEM */}
                 {subtitle}
             </Typography>
-            <Typography variant='h3' fontWeight='bold'>
+            <Typography variant='h3' fontWeight='bold' textAlign='center'>
                 {/* Checkout Popular Cases */}
                 {title}
             </Typography>

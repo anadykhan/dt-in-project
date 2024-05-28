@@ -18,8 +18,8 @@ const HomePage = () => {
         <Banner></Banner>
         <CategorySection></CategorySection>
         <AccordionSection></AccordionSection>
-        {/* <CauseSection></CauseSection>
-        <UpcomingEventSection></UpcomingEventSection> */}
+        <CauseSection></CauseSection>
+        {/* <UpcomingEventSection></UpcomingEventSection> */}
 
     </Box>
   )
