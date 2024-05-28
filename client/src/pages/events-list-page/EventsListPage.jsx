@@ -2,8 +2,18 @@ import { Box, Grid } from '@mui/material'
 import React from 'react'
 import EventCard from '../../components/event/EventCard'
 import ListPageBanner from '../../components/list-page-banner/ListPageBanner'
+import { useGetEventsDataClient } from '../../hooks/hooks/events-hooks-client/EventsHooksClient'
 
 const EventsListPage = () => {
+
+    const {data: eventsDataClient, isLoading: eventsDataLoadingClient} = useGetEventsDataClient()
+
+    if(eventsDataLoadingClient){
+        return <h1>Loading</h1>
+    }
+
+    console.log(eventsDataClient)
+
     return (
         <Box
             sx={{
