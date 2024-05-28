@@ -16,8 +16,8 @@ const HomePage = () => {
     }}
     >
         <Banner></Banner>
-        {/* <CategorySection></CategorySection>
-        <AccordionSection></AccordionSection> */}
+        <CategorySection></CategorySection>
+        {/* <AccordionSection></AccordionSection> */}
         {/* <CauseSection></CauseSection>
         <UpcomingEventSection></UpcomingEventSection> */}
 

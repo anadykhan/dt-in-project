@@ -2,11 +2,13 @@ import { Box } from '@mui/material'
 import React from 'react'
 import CategoryHeader from '../category-header/CategoryHeader'
 import CategoryCard from '../../../category/CategoryCard'
+import CommonButton from '../../../general/button/CommonButton'
 
 const CategorySection = () => {
     return (
         <Box
             sx={{
+                width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -19,15 +21,31 @@ const CategorySection = () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     gap: 8,
-                    width: 1150
                 }}
             >
-                <CategoryHeader
-                    title='Inspire and Help Needy!'
-                    subtitle='GET INVOLVED TODAY'
-                    background='#ef5350'
-                ></CategoryHeader>
+                <Box
+                sx={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 5,
+                    '@media (min-width: 768px)': {
+                        flexDirection: 'row'
+                      },
+                }}
+                >
 
+                    <CategoryHeader
+                        title='Inspire and Help Needy!'
+                        subtitle='GET INVOLVED TODAY'
+                        background='#ef5350'
+                    ></CategoryHeader>
+                    <CommonButton
+                        content='LEARN MORE'
+                        width={200}
+                    />
+                </Box>
                 {/* <Box
                 sx={{
                     display: 'flex',
@@ -45,7 +63,10 @@ const CategorySection = () => {
                     sx={{
                         width: '100%',
                         display: 'flex',
-                        justifyContent: 'space-between'
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 10,
+                        flexWrap: 'wrap'
                     }}
                 >
                     <CategoryCard

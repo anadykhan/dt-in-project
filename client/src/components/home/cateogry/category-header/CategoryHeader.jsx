@@ -5,7 +5,7 @@ import CommonButton from '../../../general/button/CommonButton'
 
 const CategoryHeader = (props) => {
 
-    const { title, subtitle, background } = props
+    const { title, subtitle } = props
 
     return (
         <Box
@@ -13,7 +13,11 @@ const CategoryHeader = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 2,
-                width: 'full'
+                width: '100%',
+                alignItems: 'center',
+                '@media (min-width: 768px)': {
+                    alignItems: 'start'
+                  },
             }}
         >
             <Box
@@ -36,14 +40,9 @@ const CategoryHeader = (props) => {
                     alignItems: 'center'
                 }}
             >
-                <Typography variant='h3' fontWeight='bold'>
+                <Typography variant='h3' fontWeight='bold' textAlign='center'>
                     {title}
                 </Typography>
-                <CommonButton
-                    content='LEARN MORE'
-                    background={background}
-                    width={200}
-                />
             </Box>
         </Box>
     )
