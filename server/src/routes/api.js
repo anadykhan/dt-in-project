@@ -7,6 +7,7 @@ const eventsRouter = require('./events/events.router')
 const loginRouter = require('./login/login.router')
 const registrationRouter = require('./registration/registration.router')
 const adminsRouter = require('./admins/admins.router')
+const currentRouter = require('./current/current.router')
 
 const api = express.Router()
 
@@ -17,5 +18,6 @@ api.use('/events', eventsRouter)
 api.use('/login', loginRouter)
 api.use('/registration', registrationRouter)
 api.use('/admins', adminsRouter)
+api.use('/current', currentRouter)
 
 module.exports = api

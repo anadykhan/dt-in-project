@@ -1,16 +1,38 @@
 const jwt = require('jsonwebtoken');
 
-function authenticateToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-    console.log(token)
-    if (token == null) return res.sendStatus(401);
+async function authenticateToken(req, res, next) {
+    const accessToken = req.headers.authorization
 
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if (err) return res.sendStatus(403);
-        req.user = user;
-        next();
-    });
+    if (!accessToken) {
+        return res.status(401).json({ message: 'Access token not found!' })
+    }
+
+    //if (await userInvalidTokens.findOne({ accessToken })) {
+    //    return res.status(401).json({ message: 'Access token invalid', code: 'AccessTokenInvalid' })
+    //}
+
+    try {
+        const decodedAccessToken = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+
+        //req.accessToken = { value: accessToken, exp: decodedAccessToken.exp }
+        req.userId = { id: decodedAccessToken.userId }
+
+        console.log(req.userId)
+
+        next()
+    } catch (error) {
+        if (error instanceof jwt.TokenExpiredError) {
+            return res.status(401).json({ message: 'Access token expired', code: 'Access token expired' })
+        }
+        else if (error instanceof jwt.JsonWebTokenError) {
+            return res.status(401).json({ message: 'Acees token invalid', code: 'Access token invalid' })
+        }
+        else {
+            return res.status(500).json({ message: error.message })
+        }
+
+        return res.status(401).json({ message: 'Access token invalid or expired' })
+    }
 }
 
 module.exports = authenticateToken;
