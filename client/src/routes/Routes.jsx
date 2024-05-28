@@ -9,6 +9,7 @@ import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
 import SignInContent from "../components/sign-in/sign-in-content/SignInContent";
 import SignInPage from "../pages/sign-in-page/SignInPage";
 import RegistrationPage from "../pages/registration-page/RegistrationPage";
+import EventsListPage from "../pages/events-list-page/EventsListPage";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/causes-list',
                 element: <CausesListPage></CausesListPage>
+            },
+            {
+                path: '/events-list',
+                element: <EventsListPage></EventsListPage>
             },
             {
                 path: '/cause-detail',
