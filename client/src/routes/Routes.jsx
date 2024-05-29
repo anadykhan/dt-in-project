@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/root/Root";
 import HomePage from "../pages/home-page/HomePage";
-
 import CausesListPage from "../pages/causes-list/CausesListPage";
 import SinglePostPage from "../pages/single-post-page/single-post-section/SinglePostPage";
 import CauseDetailPage from "../pages/cause-detail/CauseDetailPage";
 import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
-import SignInContent from "../components/sign-in/sign-in-content/SignInContent";
 import SignInPage from "../pages/sign-in-page/SignInPage";
 import RegistrationPage from "../pages/registration-page/RegistrationPage";
 import EventsListPage from "../pages/events-list-page/EventsListPage";
@@ -33,7 +31,7 @@ const router = createBrowserRouter([
                 element: <EventsListPage></EventsListPage>
             },
             {
-                path: '/cause-detail',
+                path: '/cause-detail/:id',
                 element: <CauseDetailPage></CauseDetailPage>
             },
             {

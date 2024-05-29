@@ -10,10 +10,14 @@ import Badge from '../badge/Badge';
 
 const CausesCard = (props) => {
 
-  const { title, content, collected, goal, badgeContent, badgeBackground } = props
+  const { title, cardDetail, collected, goal, badgeContent, badgeBackground, onClick} = props
+
 
   return (
-    <Card sx={{
+    <Card
+    onClick={onClick} 
+    sx={{
+      height: 600,
       maxWidth: 345,
       borderRadius: 5,
       position: 'relative'
@@ -33,11 +37,11 @@ const CausesCard = (props) => {
             gap: 2
           }}
         >
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" textAlign='center'>
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign='center'>
-            {content}
+            {cardDetail}
           </Typography>
           <Box
             sx={{

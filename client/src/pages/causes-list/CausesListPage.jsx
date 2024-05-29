@@ -1,10 +1,20 @@
 import { Box, Grid } from '@mui/material';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CausesCard from '../../components/causes/CausesCard';
 import ListPageBanner from '../../components/list-page-banner/ListPageBanner';
+import { useGetCausesDataClient } from '../../hooks/hooks/causes-hooks-client/CausesHooksClient';
 
 const CausesListPage = () => {
+  const { data: causesDataClient, isLoading: causesDataClientLoading } = useGetCausesDataClient()
   const [contentCount, setContentCount] = useState(8);
+  const navigate = useNavigate()
+
+  if (causesDataClientLoading) {
+    return <h1>Loading</h1>
+  }
+
+  console.log(causesDataClient.data)
 
   return (
     <Box
@@ -30,18 +40,24 @@ const CausesListPage = () => {
               lg: 1200
             }
           }}>
-          {[...Array(9)].map((_, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <CausesCard
-                badgeContent='EDUCATION'
-                badgeBackground='red'
-                title='Education for all'
-                content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam.'
-                collected='1000'
-                goal='2000'
-              />
-            </Grid>
-          ))}
+          {causesDataClient.data.map((data, index) => {
+            const handleCardClick = () => {
+              navigate(`/cause-detail/${data._id}`);
+          };
+            return (
+              <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <CausesCard
+                  badgeContent='EDUCATION'
+                  badgeBackground='red'
+                  title={data.title}
+                  cardDetail={data.cardDetail}
+                  collected={data.collected}
+                  goal={data.goal}
+                  onClick={handleCardClick}
+                />
+              </Grid>
+            )
+          })}
         </Grid>
       </Box>
     </Box>
