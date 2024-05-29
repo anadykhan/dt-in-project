@@ -1,7 +1,10 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 
-const EventDetailMission = () => {
+const EventDetailMission = (props) => {
+
+    const {mission} = props 
+
     return (
         <Box>
             <Typography variant='h6' fontWeight='bold'>
@@ -10,7 +13,7 @@ const EventDetailMission = () => {
             <Typography
             textAlign='justify'
             >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus assumenda vitae corporis voluptate, illo commodi nobis laborum expedita, natus velit atque eius temporibus quos necessitatibus odit, in quam dolorem?
+                {mission}
             </Typography>
         </Box>
     )

@@ -5,10 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import router from './routes/Routes.jsx';
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
 

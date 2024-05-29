@@ -8,8 +8,20 @@ import EventDetailMission from '../../components/event-detail /event-detail-miss
 import EventDetailPoints from '../../components/event-detail /event-detail-points/EventDetailPoints'
 import EventDetailEntry from '../../components/event-detail /event-detail-entry/EventDetailEntry'
 import EventDetailUpcoming from '../../components/event-detail /event-detail-upcoming/EventDetailUpcoming'
+import { useParams } from 'react-router-dom';
+import { useGetSingleEventDataClient } from '../../hooks/hooks/events-hooks-client/EventsHooksClient'
 
 const EventDetailPage = () => {
+
+  const eventId = useParams();
+  const { data: singleEventDataClient, isLoading: singleEventDataClientLoading } = useGetSingleEventDataClient(eventId.id)
+
+  if (singleEventDataClientLoading) {
+    return <h1>Loading</h1>
+  }
+
+  console.log(singleEventDataClient.data)
+  console.log(singleEventDataClient.data.missionPoints)
   return (
     <Box
       sx={{
@@ -36,13 +48,27 @@ const EventDetailPage = () => {
           gap: 5
         }}
       >
-        <EventDetailIntro></EventDetailIntro>
+        <EventDetailIntro
+          title={singleEventDataClient.data.title}
+          titleContent={singleEventDataClient.data.titleContent}
+        ></EventDetailIntro>
+
         <EventDetailImage></EventDetailImage>
-        <EventDetailDescription></EventDetailDescription>
-        <EventDetailMission></EventDetailMission>
+
+        <EventDetailDescription
+          description={singleEventDataClient.data.description}
+          descriptionPoint1={singleEventDataClient.data.descriptionPoints[0]}
+          descriptionPoint2={singleEventDataClient.data.descriptionPoints[1]}
+          descriptionPoint3={singleEventDataClient.data.descriptionPoints[2]}
+        ></EventDetailDescription>
+
+        <EventDetailMission
+          mission={singleEventDataClient.data.mission}
+        ></EventDetailMission>
+
         <Box
           width='100%'
-          
+
           sx={{
             display: 'grid',
             gridTemplateColumns: '1fr', // Single column by default
@@ -53,23 +79,36 @@ const EventDetailPage = () => {
             },
           }}
         >
-          <EventDetailPoints></EventDetailPoints>
-          <EventDetailPoints></EventDetailPoints>
-          <EventDetailPoints></EventDetailPoints>
-          <EventDetailPoints></EventDetailPoints>
+          {
+            singleEventDataClient.data.missionPoints.map((data, index) => {
+              return (
+                <EventDetailPoints
+                  key={index}
+                  missionPoint={singleEventDataClient.data.missionPoints[index]}
+                ></EventDetailPoints>
+              )
+            })
+          }
         </Box>
       </Box>
       <Box
-      sx={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 5
-      }}
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 5
+        }}
       >
-        <EventDetailCard></EventDetailCard>
+        <EventDetailCard
+          content={singleEventDataClient.data.content}
+          startDate={singleEventDataClient.data.startDate}
+          startMonth={singleEventDataClient.data.startMonth}
+          startTime={singleEventDataClient.data.startTime}
+          endTime={singleEventDataClient.data.endTime}
+          location={singleEventDataClient.data.location}
+        ></EventDetailCard>
         <EventDetailEntry></EventDetailEntry>
         <EventDetailUpcoming></EventDetailUpcoming>
       </Box>

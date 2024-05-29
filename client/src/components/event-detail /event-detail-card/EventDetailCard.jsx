@@ -9,7 +9,10 @@ import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 
 
-const EventDetailCard = () => {
+const EventDetailCard = (props) => {
+
+    const { content, startDate, startMonth, startTime, endTime, location } = props
+
     return (
         <Box
             sx={{
@@ -24,7 +27,7 @@ const EventDetailCard = () => {
                 alignItems: 'center',
                 background: '#F6F6F6',
                 gap: 2,
-                borderRadius: 4
+                borderRadius: 4,
             }}
         >
             <Box
@@ -41,14 +44,20 @@ const EventDetailCard = () => {
                 Event Details
             </Box>
             <Typography
-            textAlign='center'
+                textAlign='center'
+                sx={{
+                    padding: 3
+                }}
+            >
+                {content}
+            </Typography>
+            <Box
             sx={{
-                padding: 3
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
             }}
             >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quasi.
-            </Typography>
-            <Box>
                 <Box
                     sx={{
                         display: 'flex',
@@ -56,8 +65,11 @@ const EventDetailCard = () => {
                     }}
                 >
                     <FaCalendarAlt color='orange'></FaCalendarAlt>
-                    <Typography fontWeight='bold'>
-                        15 August, 2024 (Sunday)
+                    <Typography
+                        fontWeight='bold'
+
+                    >
+                        {startDate} {startMonth}, 2024
                     </Typography>
                 </Box>
                 <Box
@@ -68,7 +80,7 @@ const EventDetailCard = () => {
                 >
                     <FaClock color='orange'></FaClock>
                     <Typography fontWeight='bold'>
-                        From 12:30pm - 2:30pm
+                        From {startTime} - {endTime}
                     </Typography>
                 </Box>
                 <Box
@@ -79,7 +91,7 @@ const EventDetailCard = () => {
                 >
                     <FaLocationDot color='orange'></FaLocationDot>
                     <Typography fontWeight='bold'>
-                        Rock Street, Las Vegas
+                        {location}
                     </Typography>
                 </Box>
             </Box>

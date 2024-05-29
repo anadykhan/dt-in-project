@@ -2,7 +2,10 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 
-const EventDetailDescription = () => {
+const EventDetailDescription = (props) => {
+
+    const {description, descriptionPoint1, descriptionPoint2, descriptionPoint3} = props
+
   return (
     <Box>
             <Typography variant='h6' fontWeight='bold'>
@@ -11,7 +14,7 @@ const EventDetailDescription = () => {
             <Typography
             textAlign='justify'
             >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus assumenda vitae corporis voluptate, illo commodi nobis laborum expedita, natus velit atque eius temporibus quos necessitatibus odit, in quam dolorem?
+                {description}
             </Typography>
             <Box>
                 <Box
@@ -25,7 +28,7 @@ const EventDetailDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoint1}
                     </Typography>
                 </Box>
                 <Box
@@ -39,7 +42,7 @@ const EventDetailDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoint2}
                     </Typography>
                 </Box>
                 <Box
@@ -53,7 +56,7 @@ const EventDetailDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoint3}
                     </Typography>
                 </Box>
             </Box>

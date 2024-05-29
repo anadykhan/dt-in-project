@@ -2,7 +2,10 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { FaHandshake } from "react-icons/fa";
 
-const EventDetailPoints = () => {
+const EventDetailPoints = (props) => {
+
+    const {missionPoint} = props
+
     return (
         <Box
             sx={{
@@ -29,7 +32,7 @@ const EventDetailPoints = () => {
                     width: '90%'
                 }}
             >
-                We are inspiring and helping a better lifestyle
+               {missionPoint}
             </Typography>
         </Box>
     )

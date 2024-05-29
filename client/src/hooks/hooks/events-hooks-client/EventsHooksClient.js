@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchCreateEventDataClient, fetchDeleteEventDataClient, fetchGetEventsDataClient, fetchGetSingleEventDataClient, fetchUpdateEventDataClient } from '../../fetchers/events-fetchers-client/EventFetchersClient'
 
 export const useGetEventsDataClient = () => {
@@ -8,12 +8,13 @@ export const useGetEventsDataClient = () => {
     })
 }
 
-export const useGetSingleEventDataClient = (id) => {
+export const useGetSingleEventDataClient = ( eventId ) => {
     return useQuery(
-        ['single-event-client'],
-        () => fetchGetSingleEventDataClient(id)
-    )
-}
+        ['single-event-client', eventId],  
+        () => fetchGetSingleEventDataClient(eventId)
+    );
+};
+
 
 export const useCreateEventDataClient = () => {
     const queryClient = useQueryClient()
