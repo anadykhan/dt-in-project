@@ -15,17 +15,20 @@ import MenuItem from '@mui/material/MenuItem';
 import { FiMenu } from "react-icons/fi";
 import CommonButton from '../../general/button/CommonButton';
 import NavbarOptions from '../../../utils/NavbarOptions';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-
-const pages = ['About Us', 'Causes', 'Events', 'Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavigationBar(props) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const location = useLocation();
 
     const { sx } = props
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -118,10 +121,20 @@ function NavigationBar(props) {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                            {NavbarOptions.map((data) => (
+                                <NavLink
+                                    key={data.key}
+                                    to={data.route}
+                                    className={isActive(data.route) ? "side-nav-bar active-link" : "side-nav-bar"}
+                                >
+                                    <Button
+
+                                        onClick={handleCloseNavMenu}
+                                        sx={{ my: 2, color: 'black', display: 'block' }}
+                                    >
+                                        {data.item}
+                                    </Button>
+                                </NavLink>
                             ))}
                         </Menu>
                     </Box>
@@ -157,6 +170,7 @@ function NavigationBar(props) {
                             <NavLink
                                 key={data.key}
                                 to={data.route}
+                                className={isActive(data.route) ? "side-nav-bar active-link" : "side-nav-bar"}
                             >
                                 <Button
 
@@ -172,11 +186,7 @@ function NavigationBar(props) {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <CommonButton
-                                    content='DONATE NOW'
-                                    background='#ef5350'
-                                ></CommonButton>
-                                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu
