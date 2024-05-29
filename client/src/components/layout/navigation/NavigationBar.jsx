@@ -14,6 +14,8 @@ import MenuItem from '@mui/material/MenuItem';
 //import AdbIcon from '@mui/icons-material/Adb';
 import { FiMenu } from "react-icons/fi";
 import CommonButton from '../../general/button/CommonButton';
+import NavbarOptions from '../../../utils/NavbarOptions';
+import { NavLink } from 'react-router-dom';
 
 
 const pages = ['About Us', 'Causes', 'Events', 'Contact Us'];
@@ -44,16 +46,15 @@ function NavigationBar(props) {
         <AppBar
             position="static"
             sx={{
-                background: 'transparent',
+                width: '100%',
+                background: '#323030',
                 height: 100,
-                borderBottom: 0.6,
-                borderColor: '#9e9e9e',
                 ...sx
             }}
         >
             <Container
-                maxWidth="xl"
                 sx={{
+                    width: '100%',
                     background: 'transparent',
                     display: 'flex',
                     justifyContent: 'center',
@@ -63,8 +64,10 @@ function NavigationBar(props) {
                 <Toolbar
                     disableGutters
                     sx={{
+                        width: '100%',
                         display: 'flex',
-                        gap: 40,
+                        justifyContent: 'space-between'
+                        //gap: 40,
                     }}
                 >
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -141,15 +144,28 @@ function NavigationBar(props) {
                     >
                         LOGO
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            display: {
+                                xs: 'none',
+                                md: 'flex'
+                            },
+                            justifyContent: 'center'
+                        }}>
+                        {NavbarOptions.map((data) => (
+                            <NavLink
+                                key={data.key}
+                                to={data.route}
                             >
-                                {page}
-                            </Button>
+                                <Button
+
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {data.item}
+                                </Button>
+                            </NavLink>
                         ))}
                     </Box>
 
