@@ -1,10 +1,11 @@
 import { Box, Grid } from '@mui/material'
-import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import EventCard from '../../components/event/EventCard'
 import ListPageBanner from '../../components/list-page-banner/ListPageBanner'
 import { useGetEventsDataClient } from '../../hooks/hooks/events-hooks-client/EventsHooksClient'
 
 const EventsListPage = () => {
+    const navigate = useNavigate();
 
     const {data: eventsDataClient, isLoading: eventsDataLoadingClient} = useGetEventsDataClient()
 
@@ -41,6 +42,9 @@ const EventsListPage = () => {
                     }}
                 >
                     {eventsDataClient.data.map((data, index) => {
+                        const handleCardClick = () => {
+                            navigate(`/event-detail/${data._id}`);
+                        };
                         return (
                             <Grid item xs={12} sm={12} md={12} lg={6} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <EventCard
@@ -52,8 +56,9 @@ const EventsListPage = () => {
                                     image='src/assets/istockphoto-1430371482-612x612.jpg'
                                     title={data.title}
                                     content={data.content}
-                                ></EventCard>
-                            </Grid>
+                                    onClick={handleCardClick}
+                                />
+                            </Grid> 
                         )
                     })}
                 </Grid>

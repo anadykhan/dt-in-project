@@ -8,77 +8,52 @@ import { FaRegClock } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 
 const EventCard = (props) => {
-
-    const {startTime, endTime, startDate, startMonth, location, image, title, content} = props
+    const { startTime, endTime, startDate, startMonth, location, image, title, content, onClick } = props;
 
     return (
-        <Card sx={{
-            display: 'flex',
-            flexDirection: 'row-reverse',
-            justifyContent: 'start',
-            width: 600,
-            height: 200,
-            gap: 2,
-            borderRadius: 4
-        }}>
-            <Box sx={{
+        <Card
+            onClick={onClick}
+            sx={{
                 display: 'flex',
-                flexDirection: 'column',
-            }}>
-                <CardContent sx={{
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    flexDirection: 'column',
-                    flex: '1 0 auto',
-                    width: '90%',
-                    gap: 1,
-                }}>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 2
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 1
-                            }}
-                        >
-                            <FaRegClock></FaRegClock>
+                flexDirection: 'row-reverse',
+                justifyContent: 'start',
+                width: 600,
+                height: 200,
+                gap: 2,
+                borderRadius: 4,
+                cursor: 'pointer',  // Add cursor pointer to indicate clickable
+            }}
+        >
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CardContent
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-evenly',
+                        flexDirection: 'column',
+                        flex: '1 0 auto',
+                        width: '90%',
+                        gap: 1,
+                    }}
+                >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                            <FaRegClock />
                             <Typography>{startTime} - {endTime}</Typography>
                         </Box>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 1
-                            }}
-                        >
-                            <IoLocationOutline></IoLocationOutline>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                            <IoLocationOutline />
                             <Typography>{location}</Typography>
                         </Box>
                     </Box>
-                    <Typography 
-                    component="div" 
-                    variant="h5"
-                    >
+                    <Typography component="div" variant="h5">
                         {title}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
                         {content}
                     </Typography>
                 </CardContent>
-
             </Box>
-            <Box
-                sx={{
-                    width: 180,
-                    position: 'relative',
-                }}
-            >
+            <Box sx={{ width: 180, position: 'relative' }}>
                 <Box
                     sx={{
                         display: 'flex',
@@ -93,29 +68,23 @@ const EventCard = (props) => {
                         zIndex: 1,
                     }}
                 >
-                    <Typography 
-                    variant='h3'
-                    sx={{
-                        '@media (max-width: 500px)': {
-                            fontSize: 39
-                          },
-                    }}
-                    >{startDate}</Typography>
+                    <Typography
+                        variant='h3'
+                        sx={{ '@media (max-width: 500px)': { fontSize: 39 } }}
+                    >
+                        {startDate}
+                    </Typography>
                     <Typography>{startMonth}</Typography>
                 </Box>
                 <CardMedia
                     component="img"
                     image={image}
                     alt="Live from space album cover"
-                    sx={{
-                        width: '100%',
-                        height: '100%',
-                        filter: 'brightness(60%)',
-                    }}
+                    sx={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}
                 />
             </Box>
         </Card>
-    )
-}
+    );
+};
 
-export default EventCard
+export default EventCard;
