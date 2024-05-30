@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField } from '@mui/material';
 import CommonButton from '../../general/button/CommonButton';
+import { useCreateSignInDataClient } from '../../../hooks/hooks/sign-in-hooks-client/SignInHooksClient';
 //import '../../../assets/css/common.css'
 
 const SignInForm = () => {
 
     const [formData, setFormData] = useState({
-        name: '',
         email: '',
         password: '',
     });
+    const {mutate: signInUser} = useCreateSignInDataClient()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,10 +21,11 @@ const SignInForm = () => {
         e.preventDefault();
         console.log(formData);
         setFormData({
-            name: '',
             email: '',
             password: '',
         });
+
+        signInUser(formData)
     };
 
     return (
@@ -35,19 +37,6 @@ const SignInForm = () => {
                 flexDirection: 'column',
             }}
         >
-            <TextField
-                label="Name"
-                variant="outlined"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                sx={{ 
-                    marginBottom: 2,
-                    width: '100%'
-                 }}
-            />
             <TextField
                 label="Email"
                 variant="outlined"
