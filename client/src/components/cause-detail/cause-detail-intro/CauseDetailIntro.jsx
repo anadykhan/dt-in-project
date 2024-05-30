@@ -1,19 +1,22 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 
-const CauseDetailIntro = () => {
+const CauseDetailIntro = (props) => {
+
+  const {title, titleContent} = props
+
   return (
     <Box>
         <Typography
         variant='h4'
         fontWeight='bold'
         >
-            Education for the poor children
+            {title}
         </Typography>
         <Typography
         textAlign='justify'
         >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae excepturi quisquam, eos ut maxime minus aspernatur veniam eligendi. Maxime, animi quidem eaque temporibus quae quibusdam voluptate porro ipsam, saepe aspernatur consequatur ut itaque quos. Quaerat assumenda ea incidunt nesciunt id voluptates beatae accusantium cupiditate voluptate deleniti. Delectus corporis, obcaecati corrupti nemo accusantium fuga esse mollitia illo incidunt similique alias.
+            {titleContent}
         </Typography>
     </Box>
   )

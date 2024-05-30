@@ -48,23 +48,26 @@ const EventDetailPage = () => {
           gap: 5
         }}
       >
-        <EventDetailIntro
-          title={singleEventDataClient.data.title}
-          titleContent={singleEventDataClient.data.titleContent}
-        ></EventDetailIntro>
+        <Box>
+          <EventDetailIntro
+            title={singleEventDataClient.data.title}
+            titleContent={singleEventDataClient.data.titleContent}
+          ></EventDetailIntro>
 
-        <EventDetailImage></EventDetailImage>
+          <EventDetailImage></EventDetailImage>
 
-        <EventDetailDescription
-          description={singleEventDataClient.data.description}
-          descriptionPoint1={singleEventDataClient.data.descriptionPoints[0]}
-          descriptionPoint2={singleEventDataClient.data.descriptionPoints[1]}
-          descriptionPoint3={singleEventDataClient.data.descriptionPoints[2]}
-        ></EventDetailDescription>
+          <EventDetailDescription
+            description={singleEventDataClient.data.description}
+            descriptionPoint1={singleEventDataClient.data.descriptionPoints[0]}
+            descriptionPoint2={singleEventDataClient.data.descriptionPoints[1]}
+            descriptionPoint3={singleEventDataClient.data.descriptionPoints[2]}
+          ></EventDetailDescription>
 
-        <EventDetailMission
-          mission={singleEventDataClient.data.mission}
-        ></EventDetailMission>
+          <EventDetailMission
+            mission={singleEventDataClient.data.mission}
+          ></EventDetailMission>
+        </Box>
+
 
         <Box
           width='100%'

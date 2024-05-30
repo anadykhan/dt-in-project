@@ -7,8 +7,20 @@ import CauseImage from '../../components/cause-detail/cause-image/CauseImage'
 import CauseSummary from '../../components/cause-detail/cause-summary/CauseSummary'
 import MoreCausesCard from '../../components/cause-detail/more-causes-card/MoreCausesCard'
 import ListPageBanner from '../../components/list-page-banner/ListPageBanner'
+import { useParams } from 'react-router-dom';
+import { useGetSingleCauseDataClient } from '../../hooks/hooks/causes-hooks-client/CausesHooksClient'
 
 const CauseDetailPage = () => {
+
+    const causeId = useParams()
+    const { data: singleCauseDataClient, isLoading: singleCauseDataClientLoading } = useGetSingleCauseDataClient(causeId.id)
+
+    if(singleCauseDataClientLoading){
+        return <h1>Loading</h1>
+    }
+
+    console.log(singleCauseDataClient)
+
     return (
         <Box
             sx={{
@@ -53,10 +65,25 @@ const CauseDetailPage = () => {
                     }}
                 >
 
-                    <CauseDetailIntro></CauseDetailIntro>
+                    <CauseDetailIntro
+                    title={singleCauseDataClient.data.title}
+                    titleContent={singleCauseDataClient.data.titleContent}
+                    ></CauseDetailIntro>
+
                     <CauseImage></CauseImage>
-                    <CauseDescription></CauseDescription>
-                    <CauseSummary></CauseSummary>
+
+                    <CauseDescription
+                    description={singleCauseDataClient.data.description}descriptionPoints1={singleCauseDataClient.data.descriptionPoints[0]
+                    }
+                    descriptionPoints2={singleCauseDataClient.data.descriptionPoints[1]
+                    }
+                    descriptionPoints3={singleCauseDataClient.data.descriptionPoints[2]
+                    }
+                    ></CauseDescription>
+
+                    <CauseSummary
+                    summary={singleCauseDataClient.data.summary}
+                    ></CauseSummary>
                 </Box>
                 <Box
                     sx={{
@@ -69,7 +96,11 @@ const CauseDetailPage = () => {
                     }}
                 >
 
-                    <CauseDetailCard></CauseDetailCard>
+                    <CauseDetailCard
+                    cardDetail={singleCauseDataClient.data.cardDetail}
+                    collected={singleCauseDataClient.data.collected}
+                    goal={singleCauseDataClient.data.goal}
+                    ></CauseDetailCard>
                     <MoreCausesCard></MoreCausesCard>
                 </Box>
             </Box>

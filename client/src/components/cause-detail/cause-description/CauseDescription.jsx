@@ -3,7 +3,10 @@ import React from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 
 
-const CauseDescription = () => {
+const CauseDescription = (props) => {
+
+    const {description, descriptionPoints1, descriptionPoints2, descriptionPoints3} =  props
+
     return (
         <Box>
             <Typography variant='h6' fontWeight='bold'>
@@ -12,7 +15,7 @@ const CauseDescription = () => {
             <Typography
             textAlign='justify'
             >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus assumenda vitae corporis voluptate, illo commodi nobis laborum expedita, natus velit atque eius temporibus quos necessitatibus odit, in quam dolorem?
+               {description}
             </Typography>
             <Box>
                 <Box
@@ -26,7 +29,7 @@ const CauseDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoints1}
                     </Typography>
                 </Box>
                 <Box
@@ -40,7 +43,7 @@ const CauseDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoints2}
                     </Typography>
                 </Box>
                 <Box
@@ -54,7 +57,7 @@ const CauseDescription = () => {
                         color='red'
                     ></FaCheckCircle>
                     <Typography>
-                        Lorem ipsum dolor sit amet consectetur.
+                        {descriptionPoints3}
                     </Typography>
                 </Box>
             </Box>

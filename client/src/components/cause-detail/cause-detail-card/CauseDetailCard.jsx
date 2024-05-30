@@ -9,7 +9,10 @@ import { FaTwitter } from "react-icons/fa";
 
 
 
-const CauseDetailCard = () => {
+const CauseDetailCard = (props) => {
+
+    const {collected, goal, cardDetail} = props
+
     return (
         <Box
             sx={{
@@ -40,8 +43,13 @@ const CauseDetailCard = () => {
             >
                 Fund raised
             </Box>
-            <Typography>
-                Lorem ipsum dolor sit.
+            <Typography
+            textAlign='center'
+            sx={{
+                padding: 3
+            }}
+            >
+                {cardDetail}
             </Typography>
             <Box
             sx={{
@@ -50,10 +58,10 @@ const CauseDetailCard = () => {
             }}
             >
                 <Typography>
-                    Collected: $1000
+                    Collected: ${collected}
                 </Typography>
                 <Typography>
-                    Goal: $10000
+                    Goal: ${goal}
                 </Typography>
             </Box>
             <CommonButton
