@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField } from '@mui/material';
 import CommonButton from '../../general/button/CommonButton';
+import { useCreateRegistrationDataClient } from '../../../hooks/hooks/registration-hooks-client/RegistrationHooksClient';
 //import '../../../assets/css/common.css'
 
 const RegistrationForm = () => {
 
     const [formData, setFormData] = useState({
-        name: '',
+        username: '',
         email: '',
         password: '',
     });
+    const { mutate: addUserClient } = useCreateRegistrationDataClient()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,12 +20,15 @@ const RegistrationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
         setFormData({
-            name: '',
+            username: '',
             email: '',
             password: '',
         });
+        console.log(formData);
+
+        addUserClient(formData)
+
     };
 
     return (
@@ -36,17 +41,17 @@ const RegistrationForm = () => {
             }}
         >
             <TextField
-                label="Name"
+                label="Username"
                 variant="outlined"
-                name="name"
+                name="username"
                 value={formData.name}
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ 
+                sx={{
                     marginBottom: 2,
                     width: '100%'
-                 }}
+                }}
             />
             <TextField
                 label="Email"
@@ -74,7 +79,7 @@ const RegistrationForm = () => {
                 background='#EC3C3B'
                 width='100%'
                 type='submit'
-                
+
                 sx={{
                     width: '100%',
                     '@media (min-width: 767px)': {
