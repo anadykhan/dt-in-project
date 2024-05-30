@@ -8,6 +8,7 @@ const loginRouter = require('./login/login.router')
 const registrationRouter = require('./registration/registration.router')
 const adminsRouter = require('./admins/admins.router')
 const currentRouter = require('./current/current.router')
+const authenticateToken = require('../authentication/authenticate')
 
 const api = express.Router()
 
