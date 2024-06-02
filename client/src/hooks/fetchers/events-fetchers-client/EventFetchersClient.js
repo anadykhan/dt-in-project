@@ -7,7 +7,7 @@ export const fetchGetEventsDataClient = () => {
 }
 
 export const fetchGetSingleEventDataClient = (id) => {
-    return axios.get(`${url}/${id}`)
+    return axios.get(`${url}/${id}`, {withCredentials: true})
 }
 
 export const fetchCreateEventDataClient = (event) => {

@@ -1,7 +1,10 @@
 const jwt = require('jsonwebtoken');
 
 async function authenticateToken(req, res, next) {
-    const accessToken = req.headers.authorization
+    // const accessToken = req.headers.authorization
+    const accessToken = await req.headers.cookie.substring('token='.length)
+
+    console.log(req.headers)
 
     if (!accessToken) {
         return res.status(401).json({ message: 'Access token not found!' })

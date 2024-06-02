@@ -5,11 +5,11 @@ import axios from 'axios'
 const url = 'http://localhost:8000/v1/causes'
 
 export const fetchGetCausesDataClient = () => {
-    return axios.get(url)
+    return axios.get(url, {withCredentials: true})
 }
 
 export const fetchGetSingleCauseDataClient = (id) => {
-    return axios.get(`${url}/${id}`)
+    return axios.get(`${url}/${id}`, {withCredentials: true})
 }
 
 export const fetchCreateCauseDataClient = (cause) => {
