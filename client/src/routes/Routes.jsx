@@ -8,6 +8,7 @@ import EventDetailPage from "../pages/event-detail-page/EventDetailPage";
 import SignInPage from "../pages/sign-in-page/SignInPage";
 import RegistrationPage from "../pages/registration-page/RegistrationPage";
 import EventsListPage from "../pages/events-list-page/EventsListPage";
+import UserDonations from "../pages/user-donations/UserDonations";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: '/registration',
                 element: <RegistrationPage></RegistrationPage>
+            },
+            {
+                path: '/user-donations',
+                element: <UserDonations></UserDonations>
             }
         ]
     }
