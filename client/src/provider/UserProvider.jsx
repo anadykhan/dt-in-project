@@ -1,19 +1,24 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { useGetCurrentDataClient } from './hooks/useGetCurrentDataClient';
+import { useGetCurrentDataClient } from '../hooks/hooks/current-hooks-client/CurrentHooksClient';
+
 
 const UserDataContext = createContext();
 
 export const useUserData = () => useContext(UserDataContext);
 
 export const UserProvider = ({ children }) => {
-  const { data, isLoading, isError } = useGetCurrentDataClient();
+  const { data, isLoading, isError } = useGetCurrentDataClient()
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    // console.log("Data:", data);
+    console.log("isLoading:", isLoading);
+    console.log("isError:", isError);
     if (!isLoading && !isError) {
-      setUserData(data); // Assuming the user data is directly received from the API
+      setUserData(data);
     }
   }, [data, isLoading, isError]);
+  
 
   return (
     <UserDataContext.Provider value={userData}>

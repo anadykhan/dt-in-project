@@ -13,7 +13,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { FiMenu } from "react-icons/fi";
 import NavbarOptions from '../../../utils/NavbarOptions';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useGetCurrentDataClient } from '../../../hooks/hooks/current-hooks-client/CurrentHooksClient';
+import { useUserData } from '../../../provider/UserProvider';
+import { useLogoutDataClient } from '../../../hooks/hooks/logout-hooks-client/LogoutHooksClient';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -21,11 +22,8 @@ function NavigationBar(props) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const location = useLocation();
-    // const { data: current, isLoading: currentIsLoading } = useGetCurrentDataClient()
-
-    // if (currentIsLoading) {
-    //     return <h1>Loading</h1>
-    // }
+    const userData = useUserData();
+    const { mutate } = useLogoutDataClient();
 
     const { sx } = props;
 
@@ -48,7 +46,14 @@ function NavigationBar(props) {
         setAnchorElUser(null);
     };
 
-
+    const handleLogout = async () => {
+        try {
+            console.log('Logout working')
+            await mutate();
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
+    };
 
     return (
         <AppBar
@@ -138,11 +143,15 @@ function NavigationBar(props) {
                     </Box>
 
                     <Box>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu}>
-                                <Avatar alt="User Avatar" src="/static/images/avatar.jpg" />
-                            </IconButton>
-                        </Tooltip>
+                        {userData ? ( // Check if user data is available
+                            <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu}>
+                                    <Avatar alt="User Avatar" src={userData.avatar || "/static/images/avatar.jpg"} />
+                                </IconButton>
+                            </Tooltip>
+                        ) : (
+                            <Button color="inherit" component={NavLink} to="/sign-in">Sign In</Button>
+                        )}
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
@@ -160,7 +169,7 @@ function NavigationBar(props) {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                <MenuItem key={setting} onClick={setting === 'Logout' ? handleLogout : handleCloseUserMenu}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}

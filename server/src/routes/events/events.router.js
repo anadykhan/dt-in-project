@@ -6,7 +6,7 @@ const { httpGetAllEvents, httpGetSingleEvent, httpCreateEvent, httpUpdateEvent, 
 const eventsRouter = express.Router()
 
 eventsRouter.get('/', httpGetAllEvents)
-eventsRouter.get('/:id', authenticateToken, httpGetSingleEvent)
+eventsRouter.get('/:id', httpGetSingleEvent)
 eventsRouter.post('/', httpCreateEvent)
 eventsRouter.post('/updateevent', httpUpdateEvent)
 eventsRouter.delete('/', httpDeleteEvent)

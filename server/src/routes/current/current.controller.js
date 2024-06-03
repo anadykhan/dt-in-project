@@ -2,19 +2,16 @@ const jwt = require('jsonwebtoken');
 const users = require('../../models/users/users.mongo')
 
 async function httpGetCurrentUser(req, res) {
-    // const accessToken = req.headers.authorization
-    const accessToken = await req.headers.cookie.substring('token='.length)
-
-    // console.log(accessToken)
-    console.log(req.headers)
-
-    if (!accessToken) {
-        return res.status(401).json({ message: 'Access token not found!' })
+    // Check if the cookie header exists
+    if (!req.headers.cookie) {
+        return res.status(401).json({ message: 'Not logged in (Access token not found)' });
     }
 
-    //if (await userInvalidTokens.findOne({ accessToken })) {
-    //    return res.status(401).json({ message: 'Access token invalid', code: 'AccessTokenInvalid' })
-    //}
+    const accessToken = req.headers.cookie.substring('token='.length);
+
+    if (!accessToken) {
+        return res.status(401).json({ message: 'Access token not found!' });
+    }
 
     try {
         const decodedAccessToken = await jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
@@ -34,13 +31,11 @@ async function httpGetCurrentUser(req, res) {
             return res.status(401).json({ message: 'Access token expired', code: 'Access token expired' })
         }
         else if (error instanceof jwt.JsonWebTokenError) {
-            return res.status(401).json({ message: 'Acees token invalid', code: 'Access token invalid' })
+            return res.status(401).json({ message: 'Access token invalid', code: 'Access token invalid' })
         }
         else {
             return res.status(500).json({ message: error.message })
         }
-
-        return res.status(401).json({ message: 'Access token invalid or expired' })
     }
 }
 
