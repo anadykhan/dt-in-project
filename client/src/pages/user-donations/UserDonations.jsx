@@ -7,7 +7,7 @@ const UserDonations = () => {
     <Box>
         <UserDonationCard></UserDonationCard>
         <UserDonationCard></UserDonationCard>
-        <UserDonationCard></UserDonationCard>
+        <UserDonationCard></UserDonationCard>``
     </Box>
   )
 }

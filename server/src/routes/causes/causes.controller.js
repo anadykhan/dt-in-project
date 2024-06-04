@@ -1,4 +1,4 @@
-const { getAllCauses, getSingleCause, createCause, updateCause, deleteCause } = require("../../models/causes/causes.model")
+const { getAllCauses, getSingleCause, createCause, updateCause, deleteCause, pushDonator } = require("../../models/causes/causes.model")
 
 async function httpGetAllCauses (req, res) {
     const causes = await getAllCauses()
@@ -53,10 +53,24 @@ async function httpDeleteCause (req, res) {
     }
 }
 
+async function httpPushDonator(req, res) {
+    try {
+        const { causeID, donator } = req.body;
+        if (!causeID || !donator) {
+            return res.status(400).json({ msg: "Cause ID and Donator name are required." });
+        }
+        await pushDonator(causeID, donator);
+        return res.status(200).json({ msg: "Donator added successfully." });
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+}
+
 module.exports = {
     httpGetAllCauses,
     httpGetSingleCause,
     httpCreateCause,
     httpUpdateCause,
-    httpDeleteCause
+    httpDeleteCause,
+    httpPushDonator
 }

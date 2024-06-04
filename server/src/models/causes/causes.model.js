@@ -36,10 +36,27 @@ async function deleteCause (cause) {
     )
 }
 
+//Custom models
+async function pushDonator(causeID, donator) {
+    // Check if the donator already exists in the array
+    const cause = await causes.findById(causeID);
+    if (cause.donators.includes(donator)) {
+        throw new Error("Donator already exists for this cause.");
+    }
+    
+    // If donator doesn't exist, push it to the array
+    await causes.findByIdAndUpdate(
+        causeID,
+        { $push: { donators: donator } },
+        { new: true }
+    );
+}
+
 module.exports = {
     getAllCauses,
     getSingleCause,
     createCause,
     updateCause,
-    deleteCause
+    deleteCause,
+    pushDonator
 }
