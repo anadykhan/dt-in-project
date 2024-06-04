@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { fetchCreateCauseDataClient, fetchDeleteCausesDataClient, fetchGetCausesDataClient, fetchGetSingleCauseDataClient, fetchUpdateCauseDataClient } from '../../fetchers/causes-fetchers-client/CausesFetchersClient'
+import { fetchCreateCauseDataClient, fetchDeleteCausesDataClient, fetchGetCausesDataClient, fetchGetSingleCauseDataClient, fetchPushDonateDataClient, fetchUpdateCauseDataClient } from '../../fetchers/causes-fetchers-client/CausesFetchersClient'
 
 export const useGetCausesDataClient = () => {
     return useQuery({
@@ -44,3 +44,18 @@ export const useDeleteCauseDataClient = () => {
         }
     );
 }
+
+//Custom hooks
+
+export const usePushDonatorDataClient = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation(
+        fetchPushDonateDataClient,
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries('causes-client');
+            }
+        }
+    );
+};

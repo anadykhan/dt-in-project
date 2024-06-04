@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
     console.log("isLoading:", isLoading);
     console.log("isError:", isError);
     if (!isLoading && !isError) {
-      setUserData(data);
+      setUserData({userData: data, userLoading: isLoading, isError});
     }
   }, [data, isLoading, isError]);
   

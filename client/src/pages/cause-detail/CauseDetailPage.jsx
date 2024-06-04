@@ -97,6 +97,7 @@ const CauseDetailPage = () => {
                 >
 
                     <CauseDetailCard
+                    _id={singleCauseDataClient.data._id}
                     cardDetail={singleCauseDataClient.data.cardDetail}
                     collected={singleCauseDataClient.data.collected}
                     goal={singleCauseDataClient.data.goal}

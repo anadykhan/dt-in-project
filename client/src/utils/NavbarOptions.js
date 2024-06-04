@@ -20,8 +20,15 @@ const NavbarOptions = [
     },
     {
         key: 5,
-        item: 'Contact us'
-    }
+        item: 'Contact us',
+        route: '/contact-us'
+
+    },
+    {
+        key: 6,
+        item: 'My Donations',
+        route: '/user-donations'
+    },
 ]
 
 export default NavbarOptions

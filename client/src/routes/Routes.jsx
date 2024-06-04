@@ -9,6 +9,7 @@ import SignInPage from "../pages/sign-in-page/SignInPage";
 import RegistrationPage from "../pages/registration-page/RegistrationPage";
 import EventsListPage from "../pages/events-list-page/EventsListPage";
 import UserDonations from "../pages/user-donations/UserDonations";
+import ContactUs from "../pages/contact-us/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/user-donations',
                 element: <UserDonations></UserDonations>
+            },
+            {
+                path: '/contact-us',
+                element: <ContactUs></ContactUs>   
             }
         ]
     }

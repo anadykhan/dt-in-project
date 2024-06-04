@@ -3,11 +3,12 @@ import { Button } from '@mui/material';
 
 const CommonButton = (props) => {
 
-  const {content,  background, width, sx, type} = props
+  const { content, background, width, sx, type, onClick } = props
 
   return (
-      <Button
-      variant= 'contained'
+    <Button
+      onClick={onClick}
+      variant='contained'
       type={type}
       sx={{
         width: width,
@@ -17,9 +18,9 @@ const CommonButton = (props) => {
         bgcolor: `${background}`,
         ...sx
       }}
-      >
-        {content}
-      </Button>
+    >
+      {content}
+    </Button>
   )
 }
 

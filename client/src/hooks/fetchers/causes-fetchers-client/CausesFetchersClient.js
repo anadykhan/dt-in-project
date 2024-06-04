@@ -23,3 +23,8 @@ export const fetchUpdateCauseDataClient = (cause) => {
 export const fetchDeleteCausesDataClient = (cause) => {
     return axios.delete(url, { data: cause})
 }
+
+//Custom fetchers
+export const fetchPushDonateDataClient = (causeID, donator) => {
+    return axios.post(`${url}/push-donator`, { causeID, donator });
+}
