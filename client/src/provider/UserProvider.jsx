@@ -10,15 +10,22 @@ export const UserProvider = ({ children }) => {
   const { data, isLoading, isError } = useGetCurrentDataClient()
   const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-    // console.log("Data:", data);
-    console.log("isLoading:", isLoading);
-    console.log("isError:", isError);
-    if (!isLoading && !isError) {
-      setUserData({userData: data, userLoading: isLoading, isError});
-    }
-  }, [data, isLoading, isError]);
+  // useEffect(() => {
+  //   // console.log("Data:", data);
+  //   console.log("isLoading:", isLoading);
+  //   console.log("isError:", isError);
+  //   if (isLoading && isError) {
+  //     return <h1>User Loading</h1>
+  //   }
+  //   setUserData({userData: data, userLoading: isLoading, isError});
+  // }, [data, isLoading, isError]);
   
+
+  if(isLoading || isError) {
+    return <h1>User Loading or Error</h1>
+  }
+
+  setUserData({userData: data, userLoading: isLoading, isError})
 
   return (
     <UserDataContext.Provider value={userData}>
