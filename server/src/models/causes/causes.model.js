@@ -52,11 +52,19 @@ async function pushDonator(causeID, donator) {
     );
 }
 
+
+async function getCausesForUser(userId) {
+    return await causes
+        .find({ donators: userId })
+        .sort({ createdAt: -1 });
+}
+
 module.exports = {
     getAllCauses,
     getSingleCause,
     createCause,
     updateCause,
     deleteCause,
-    pushDonator
+    pushDonator,
+    getCausesForUser
 }

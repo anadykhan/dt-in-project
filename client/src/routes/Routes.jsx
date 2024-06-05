@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                 element: <RegistrationPage></RegistrationPage>
             },
             {
-                path: '/user-donations',
+                path: '/user-donations/:id',
                 element: <UserDonations></UserDonations>
             },
             {
