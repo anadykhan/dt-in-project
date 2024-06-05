@@ -10,6 +10,6 @@ causesRouter.post('/', httpCreateCause)
 causesRouter.post('/updatecause', httpUpdateCause)
 causesRouter.delete('/', httpDeleteCause)
 causesRouter.post('/push-donator', httpPushDonator)
-causesRouter.get('/user-donations/:id', httpGetCausesForUser)
+causesRouter.get('/user-donations/:id', authenticateToken, httpGetCausesForUser)
 
 module.exports = causesRouter

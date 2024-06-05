@@ -13,24 +13,8 @@ import { useUserData } from '../../../provider/UserProvider';
 
 const CauseDetailCard = (props) => {
 
-    const { collected, goal, cardDetail, _id } = props
-    const { mutate, isLoading } = usePushDonatorDataClient();
-    const {userData, userLoading} = useUserData();
+    const { collected, goal, cardDetail, _id, onClick } = props
 
-    const handleDonateButton = async () => {
-        try {
-            await mutate({ _id, donator: userData?.data._id });
-            console.log('User ID pushed as donator successfully');
-        } catch (error) {
-            console.error('Error pushing user ID as donator:', error);
-        }
-    }
-
-    if(userLoading){
-        return <h1>Loading</h1>
-    }
-
-    console.log(userData?.data, _id)
 
     return (
         <Box
@@ -90,7 +74,7 @@ const CauseDetailCard = (props) => {
                 sx={{
                     color: 'black'
                 }}
-                onClick={handleDonateButton}
+                onClick={onClick}
             >
             </CommonButton>
             <Typography fontWeight='bold'>

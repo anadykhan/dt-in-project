@@ -15,7 +15,10 @@ const bull = (
   </Box>
 );
 
-export default function UserDonationCard() {
+export default function UserDonationCard(props) {
+
+  const { title, description } = props
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -23,13 +26,13 @@ export default function UserDonationCard() {
           Word of the Day
         </Typography>
         <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+          {title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           adjective
         </Typography>
         <Typography variant="body2">
-          well meaning and kindly.
+          {description}
           <br />
           {'"a benevolent smile"'}
         </Typography>

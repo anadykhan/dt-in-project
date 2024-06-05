@@ -26,5 +26,9 @@ export const fetchDeleteCausesDataClient = (cause) => {
 
 //Custom fetchers
 export const fetchPushDonateDataClient = (causeID, donator) => {
-    return axios.post(`${url}/push-donator`, { causeID, donator });
+    return axios.post(`${url}/push-donator`, causeID, donator);
+}
+
+export const fetchGetCausesForUser = (id) => {
+    return axios.get(`${url}/user-donations/${id}`, {withCredentials: true})
 }

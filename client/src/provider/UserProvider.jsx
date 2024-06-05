@@ -18,16 +18,15 @@ export const UserProvider = ({ children }) => {
       setUserData({ userData: data, userLoading: false, isError: false });
     } else if (isError) {
       setUserData({ userData: null, userLoading: false, isError: true });
-      history.push('/sign-in'); // Navigate to sign-in page
     }
-  }, [data, isLoading, isError, history]);
+  }, [data, isLoading, isError,]);
 
   if (userData.userLoading) {
-    return <h1>Loading...</h1>;
+    console.log('User not found')
   }
 
   if (userData.isError) {
-    return <h1>Error occurred while fetching user data</h1>;
+    console.log('User finding error')
   }
 
   return (

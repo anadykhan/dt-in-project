@@ -55,7 +55,10 @@ async function httpDeleteCause(req, res) {
 
 async function httpPushDonator(req, res) {
     try {
-        const { causeID, donator } = req.body;
+        const {causeID, donator} = req.body;
+
+        console.log(causeID, donator)
+
         if (!causeID || !donator) {
             return res.status(400).json({ msg: "Cause ID and Donator name are required." });
         }

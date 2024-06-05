@@ -8,18 +8,35 @@ import CauseSummary from '../../components/cause-detail/cause-summary/CauseSumma
 import MoreCausesCard from '../../components/cause-detail/more-causes-card/MoreCausesCard'
 import ListPageBanner from '../../components/list-page-banner/ListPageBanner'
 import { useParams } from 'react-router-dom';
-import { useGetSingleCauseDataClient } from '../../hooks/hooks/causes-hooks-client/CausesHooksClient'
+import { useGetSingleCauseDataClient, usePushDonatorDataClient } from '../../hooks/hooks/causes-hooks-client/CausesHooksClient'
+import { useUserData } from '../../provider/UserProvider'
 
 const CauseDetailPage = () => {
 
     const causeId = useParams()
     const { data: singleCauseDataClient, isLoading: singleCauseDataClientLoading } = useGetSingleCauseDataClient(causeId.id)
+    const { mutate, isLoading } = usePushDonatorDataClient();
+    const { userData, userLoading } = useUserData();
 
     if(singleCauseDataClientLoading){
         return <h1>Loading</h1>
     }
 
-    console.log(singleCauseDataClient)
+    const handleDonateButton = async () => {
+        try {
+            const newDonator = {
+                causeID: causeId.id,
+                donator: userData?.data?._id
+            }
+
+            console.log(newDonator)
+
+            await mutate(newDonator);
+            console.log('User ID pushed as donator successfully');
+        } catch (error) {
+            console.error('Error pushing user ID as donator:', error);
+        }
+    }
 
     return (
         <Box
@@ -101,6 +118,7 @@ const CauseDetailPage = () => {
                     cardDetail={singleCauseDataClient.data.cardDetail}
                     collected={singleCauseDataClient.data.collected}
                     goal={singleCauseDataClient.data.goal}
+                    onClick={handleDonateButton}
                     ></CauseDetailCard>
                     <MoreCausesCard></MoreCausesCard>
                 </Box>
