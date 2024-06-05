@@ -143,7 +143,7 @@ function NavigationBar(props) {
                     </Box>
 
                     <Box>
-                        {userData ? ( // Check if user data is available
+                        {userData?.userData?.data ? ( // Check if user data is available
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu}>
                                     <Avatar alt="User Avatar" src={userData.avatar || "/static/images/avatar.jpg"} />
