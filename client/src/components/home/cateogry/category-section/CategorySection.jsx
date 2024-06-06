@@ -3,6 +3,7 @@ import React from 'react'
 import CategoryHeader from '../category-header/CategoryHeader'
 import CategoryCard from '../../../category/CategoryCard'
 import CommonButton from '../../../general/button/CommonButton'
+import CategoryCardColor from '../../../../utils/CategoryCardColor'
 
 const CategorySection = () => {
     return (
@@ -24,20 +25,20 @@ const CategorySection = () => {
                 }}
             >
                 <Box
-                sx={{
-                    width: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 5,
-                    '@media (min-width: 768px)': {
-                        flexDirection: 'row'
-                      },
-                }}
+                    sx={{
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: 5,
+                        '@media (min-width: 768px)': {
+                            flexDirection: 'row'
+                        },
+                    }}
                 >
 
                     <CategoryHeader
-                        title='Inspire and Help Needy!'
+                        title='Inspire & Help Needy!'
                         subtitle='GET INVOLVED TODAY'
                         background='#ef5350'
                     ></CategoryHeader>
@@ -69,21 +70,19 @@ const CategorySection = () => {
                         flexWrap: 'wrap'
                     }}
                 >
-                    <CategoryCard
-                        title='Education for all'
-                        image='src/assets/istockphoto-1430371482-612x612.jpg'
-                        content='Discover innovative approaches to sustainable agriculture.'
-                    ></CategoryCard>
-                    <CategoryCard
-                        title='Education for all'
-                        image='src/assets/istockphoto-1430371482-612x612.jpg'
-                        content='Discover innovative approaches to sustainable agriculture.'
-                    ></CategoryCard>
-                    <CategoryCard
-                        title='Education for all'
-                        image='src/assets/istockphoto-1430371482-612x612.jpg'
-                        content='Discover innovative approaches to sustainable agriculture.'
-                    ></CategoryCard>
+                    {
+                        CategoryCardColor.map((item, index) => {
+                            return (
+                                <CategoryCard
+                                    key={index}
+                                    title='Education for all'
+                                    image='src/assets/istockphoto-1430371482-612x612.jpg'
+                                    content='Discover innovative approaches to sustainable agriculture.'
+                                    backgroundRGBA={item.color}
+                                ></CategoryCard>
+                            )
+                        })
+                    }
                 </Box>
             </Box>
         </Box>

@@ -17,7 +17,7 @@ const Banner = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                flexDirection: 'column'
+                flexDirection: 'column',
             }}
         >
 
@@ -62,14 +62,30 @@ const Banner = () => {
                 >
 
                 </Box>
-                <Typography gutterBottom>
+                <Typography 
+                sx={{
+                    fontWeight: 'bold'
+                }}
+                gutterBottom>
                     FUNDRAISING AND CHARITY FOR POOR
                 </Typography>
                 <Box>
-                    <Typography variant="h2" textAlign='center' fontWeight='bold' gutterBottom>
+                    <Typography 
+                    variant="h2" 
+                    textAlign='center' 
+                    fontWeight='bold' 
+                    gutterBottom
+                    className='merriweather'
+                    >
                         Inspire and Help Them
                     </Typography>
-                    <Typography variant="h2" textAlign='center' fontWeight='bold' gutterBottom>
+                    <Typography 
+                    variant="h2" 
+                    textAlign='center' 
+                    fontWeight='bold' 
+                    gutterBottom
+                    className='merriweather'
+                    >
                         Live Longer
                     </Typography>
                 </Box>
@@ -81,6 +97,7 @@ const Banner = () => {
                         '@media (min-width: 1000px)': {
                             width: 800
                           },
+                          paddingX: 3
                     }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem officiis nesciunt at dolore voluptates, deserunt sed pariatur architecto ducimus consequatur?
                 </Typography>

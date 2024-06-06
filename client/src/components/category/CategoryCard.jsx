@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 
 function BackgroundImageWithOverlay(props) {
 
-    const {image, title, content} = props
+    const {image, title, content, backgroundRGBA} = props
 
     return (
         <Box
@@ -26,7 +26,7 @@ function BackgroundImageWithOverlay(props) {
                     sx={{
                         width: '100%',
                         height: '100%',
-                        backgroundImage: 'linear-gradient(to top right, rgba(255,0,0,0.7), rgba(255,0,0,0)),' +
+                        backgroundImage: `linear-gradient(39deg, rgba${backgroundRGBA} 46%, rgba(9,9,121,0) 68%),` +
                             `url(${image})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
@@ -37,7 +37,6 @@ function BackgroundImageWithOverlay(props) {
                 >
                     <Box
                         sx={{
-                            width: '50%',
                             marginLeft: 4,
                             gap: 3,
                             display: 'flex',
@@ -45,8 +44,19 @@ function BackgroundImageWithOverlay(props) {
                             color: 'white'
                         }}
                     >
-                        <Typography variant='h4'>{title}</Typography>
-                        <Typography>
+                        <Typography 
+                        variant='h5'
+                        sx={{
+                            width: '30%',
+                            fontWeight: 'bold'
+                        }}
+                        className='merriweather'
+                        >{title}</Typography>
+                        <Typography
+                        sx={{
+                            width: '60%'
+                        }}
+                        >
                             {content}
                         </Typography>
                     </Box>

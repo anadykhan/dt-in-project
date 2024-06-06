@@ -15,6 +15,7 @@ const AccordionSection = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                paddingY: 12,
             }}
         >
             {/* Apply the brightness filter only to the background image */}
@@ -29,12 +30,12 @@ const AccordionSection = () => {
             ></Box>
             <Box
                 sx={{
-                    //width: 1100,
+                    maxWidth: 1250,
                     display: 'flex',
                     alignItems: 'center',
                     flexDirection: 'column',
                     zIndex: 1,
-                    gap: 7,
+                    gap: 10,
                     '@media (min-width: 1025px)': {
                         flexDirection: 'row'
                     },
@@ -45,7 +46,7 @@ const AccordionSection = () => {
                 </Box>
                 <Box
                     sx={{
-                        width: '100%',
+                        minWidth: 600,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -66,10 +67,28 @@ const AccordionSection = () => {
                             },
                         }}
                     >
-                        <AccordionCard count='300' content='Education for all'></AccordionCard>
-                        <AccordionCard count='300' content='Education for all'></AccordionCard>
-                        <AccordionCard count='300' content='Education for all'></AccordionCard>
-                        <AccordionCard count='300' content='Education for all'></AccordionCard>
+                        <AccordionCard
+                            count='300'
+                            content='Education for all'
+                            backgroundRGB='236,60,59'
+                        ></AccordionCard>
+                        <AccordionCard
+                            count='300'
+                            content='Education for all'
+                            backgroundRGB='249,180,65'
+                        ></AccordionCard>
+                        <AccordionCard
+                            count='300'
+                            content='Education for all'
+                            backgroundRGB='249,180,65'
+                        ></AccordionCard>
+                        <AccordionCard
+                            count='300'
+                            content='Education for all'
+                            backgroundRGB='236,60,59'
+                        ></AccordionCard>
+
+
                     </Box>
 
                 </Box>

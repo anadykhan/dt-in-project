@@ -12,7 +12,7 @@ const HomePage = () => {
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
-      gap: 15
+      gap: 15,
     }}
     >
         <Banner></Banner>
