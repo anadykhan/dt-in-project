@@ -29,7 +29,18 @@ const CauseSection = () => {
       >
         <CausesCard
           badgeContent='EDUCATION'
-          badgeBackground='red'
+          badgeBackground='#E33C34'
+          title='Education for all'
+          cardDetail='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam'
+          content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam.'
+          collected='1000'
+          goal='2000'
+        >
+        </CausesCard>
+        <CausesCard
+          badgeContent='EDUCATION'
+          badgeBackground='#E33C34'
+          cardDetail='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam'
           title='Education for all'
           content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam.'
           collected='1000'
@@ -38,16 +49,8 @@ const CauseSection = () => {
         </CausesCard>
         <CausesCard
           badgeContent='EDUCATION'
-          badgeBackground='red'
-          title='Education for all'
-          content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam.'
-          collected='1000'
-          goal='2000'
-        >
-        </CausesCard>
-        <CausesCard
-          badgeContent='EDUCATION'
-          badgeBackground='red'
+          badgeBackground='#E33C34'
+          cardDetail='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam' 
           title='Education for all'
           content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, totam.'
           collected='1000'
@@ -56,9 +59,14 @@ const CauseSection = () => {
         </CausesCard>
       </Box>
       <CommonButton
-          content='Donate'
+          content='View All Causes'
           background='orange'
           width={200}
+          hoverBackground='#EF5350'
+          hoverColor='white'
+          sx={{
+            color: 'white'
+          }}
         ></CommonButton>
     </Box>
   )

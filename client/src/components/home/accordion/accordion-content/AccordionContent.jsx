@@ -41,7 +41,7 @@ const AccordionContent = () => {
                 }}
             >
                 <AccordionSummary
-                    expandIcon={<FaChevronDown></FaChevronDown>}
+                    expandIcon={<FaChevronDown color='white'></FaChevronDown>}
                     aria-controls="panel1-content"
                     id="panel1-header"
                 >
@@ -68,7 +68,7 @@ const AccordionContent = () => {
                 }}
             >
                 <AccordionSummary
-                    expandIcon={<FaChevronDown></FaChevronDown>}
+                    expandIcon={<FaChevronDown color='white'></FaChevronDown>}
                     aria-controls="panel1-content"
                     id="panel1-header"
                 >
@@ -95,7 +95,7 @@ const AccordionContent = () => {
                 }}
             >
                 <AccordionSummary
-                    expandIcon={<FaChevronDown></FaChevronDown>}
+                    expandIcon={<FaChevronDown color='white'></FaChevronDown>}
                     aria-controls="panel1-content"
                     id="panel1-header"
                 >

@@ -8,12 +8,13 @@ const Badge = (props) => {
   return (
       <Box
       sx={{
-        width: 120,
         padding: 1.5,
         textAlign: 'center',
-        bgcolor: {backgroundColor},
+        bgcolor: backgroundColor,
         borderRadius: 10,
         color: 'white',
+        fontSize: 13,
+        fontWeight: 'bold',
         ...sx
       }}
       >
