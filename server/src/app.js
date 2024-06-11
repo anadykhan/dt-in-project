@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:5173', // Change this to your front-end origin
-  credentials: true // Allow sending cookies
+  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  credentials: true
 };
 
 // Use CORS middleware with options

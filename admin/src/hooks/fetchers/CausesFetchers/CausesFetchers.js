@@ -23,3 +23,7 @@ export const fetchUpdateCauseData = (cause) => {
 export const fetchDeleteCausesData = (cause) => {
     return axios.delete(url, { data: cause})
 }
+
+export const fetchTopThreeCausesData = () => {
+    return axios.get(`${url}/top/three-causes`)
+}

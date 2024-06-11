@@ -55,7 +55,7 @@ async function httpDeleteCause(req, res) {
 
 async function httpPushDonator(req, res) {
     try {
-        const {causeID, donator} = req.body;
+        const { causeID, donator } = req.body;
 
         console.log(causeID, donator)
 
@@ -71,13 +71,30 @@ async function httpPushDonator(req, res) {
 
 async function httpGetCausesForUser(req, res) {
     try {
-        const userId = req.params.id; 
+        const userId = req.params.id;
         const causesForUser = await getCausesForUser(userId);
         return res.status(200).json(causesForUser);
     } catch (error) {
         return res.status(500).json({ error: 'Internal server error' });
     }
 }
+
+async function httpGetTopThreeCauses(req, res) {
+    const causes = await getAllCauses();
+    try {
+        causes.sort((a, b) => b.priority - a.priority);
+
+        const topThreeCauses = causes.slice(0, 3);
+
+        return res.status(200).json(topThreeCauses);
+
+    } catch (error) {
+        console.error("Error fetching causes:", error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+
 
 module.exports = {
     httpGetAllCauses,
@@ -86,5 +103,6 @@ module.exports = {
     httpUpdateCause,
     httpDeleteCause,
     httpPushDonator,
-    httpGetCausesForUser   
+    httpGetCausesForUser,
+    httpGetTopThreeCauses
 }
